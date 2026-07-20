@@ -571,20 +571,50 @@
 
       <div class="reviews-carousel reveal">
         <button class="reviews-carousel__btn reviews-carousel__btn--prev" id="reviews-carousel-prev" aria-label="Previous">❮</button>
-        <div class="reviews-carousel__viewport" id="reviews-carousel-viewport">
-          <!-- Fallback static card for fast load and SEO -->
+        <div class="reviews-carousel__viewport" id="reviews-carousel-viewport" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-lg);">
+          
+          <!-- Review 1 -->
           <div class="review-card">
             <div class="review-card__header">
               <div class="review-card__avatar">M</div>
               <div>
-                <div class="review-card__name">Marek Kowalski</div>
+                <div class="review-card__name">Marek K. (Legnica)</div>
+                <div class="review-card__date">1 week ago</div>
+              </div>
+            </div>
+            <div class="review-card__stars">★★★★★</div>
+            <p class="review-card__text">"These guys came to finish the job after a stingy guy from Legnica who quoted us an extremely high price. They did everything honestly, professionally, and affordably — highly recommended!"</p>
+            <div class="review-card__source">📍 Google Reviews</div>
+          </div>
+
+          <!-- Review 2 -->
+          <div class="review-card">
+            <div class="review-card__header">
+              <div class="review-card__avatar">P</div>
+              <div>
+                <div class="review-card__name">Piotr W. (Wrocław)</div>
                 <div class="review-card__date">2 weeks ago</div>
               </div>
             </div>
             <div class="review-card__stars">★★★★★</div>
-            <p class="review-card__text">"Fast response, professional equipment. Leak found in 30 minutes! Highly recommended."</p>
+            <p class="review-card__text">"The best crew! Nobody could handle drying and waterproofing better than Bogdan and his colleagues. Definitely the best at least in Lower Silesia — highly recommended!"</p>
             <div class="review-card__source">📍 Google Reviews</div>
           </div>
+
+          <!-- Review 3 -->
+          <div class="review-card">
+            <div class="review-card__header">
+              <div class="review-card__avatar">T</div>
+              <div>
+                <div class="review-card__name">Tomasz B. (Lubin)</div>
+                <div class="review-card__date">3 weeks ago</div>
+              </div>
+            </div>
+            <div class="review-card__stars">★★★★★</div>
+            <p class="review-card__text">"What can I say — pure quality. Bogdan and his colleagues found the leak and installed the dehumidifiers in one day. Huge thanks for the speed!"</p>
+            <div class="review-card__source">📍 Google Reviews</div>
+          </div>
+
         </div>
         <button class="reviews-carousel__btn reviews-carousel__btn--next" id="reviews-carousel-next" aria-label="Next">❯</button>
       </div>
