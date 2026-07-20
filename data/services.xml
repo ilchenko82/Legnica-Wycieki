@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wyciekipro lastUpdated="2026-05-20">
+  <company>
+    <name>WyciekiPro</name>
+    <founded>2026</founded>
+    <location>Warsaw, Poland</location>
+    <coverage>Nationwide (Poland)</coverage>
+    <phone>+48793499678</phone>
+    <email>wyciekipro@gmail.com</email>
+    <website>https://wyciekipro.pl</website>
+    <hours>Daily 07:00-23:00</hours>
+    <specialist>Slawek (10+ years experience)</specialist>
+  </company>
+  <services>
+    <service id="pipe-leak">
+      <name lang="pl">Lokalizacja wyciekow z rur</name>
+      <name lang="en">Pipe Leak Detection</name>
+      <description lang="en">Non-invasive leak detection in cold water, hot water, and central heating installations.</description>
+      <methods>Acoustic (geophone), Tracer gas (H2+N2), Thermal imaging</methods>
+      <priceFromPLN>300</priceFromPLN>
+    </service>
+    <service id="underfloor-heating">
+      <name lang="pl">Ogrzewanie podlogowe</name>
+      <name lang="en">Underfloor Heating Diagnostics</name>
+      <description lang="en">Leak diagnostics in water-based underfloor heating using thermal imaging and tracer gas.</description>
+      <methods>Thermal imaging, Tracer gas, Pressure test</methods>
+      <priceFromPLN>400</priceFromPLN>
+    </service>
+    <service id="roof-terrace">
+      <name lang="pl">Dachy i tarasy</name>
+      <name lang="en">Roof and Terrace Waterproofing</name>
+      <description lang="en">Waterproofing integrity testing for flat roofs, terraces, and balconies.</description>
+      <methods>Smoke test, Moisture measurement, Dye test</methods>
+      <priceFromPLN>400</priceFromPLN>
+    </service>
+    <service id="sewage">
+      <name lang="pl">Kanalizacja</name>
+      <name lang="en">Sewage Inspection</name>
+      <description lang="en">Sewage pipe inspection with endoscopic camera and UV dye tests.</description>
+      <methods>Endoscopic camera, UV dye test</methods>
+      <priceFromPLN>350</priceFromPLN>
+    </service>
+    <service id="drying">
+      <name lang="pl">Osuszanie po zalaniach</name>
+      <name lang="en">Post-Flood Drying</name>
+      <description lang="en">Professional building drying after floods in cooperation with trusted partners.</description>
+      <methods>Industrial dehumidifiers, Air movers</methods>
+      <priceFromPLN>contact</priceFromPLN>
+    </service>
+  </services>
+  <equipment>
+    <item name="Geophone" purpose="Acoustic leak detection underground and in walls" />
+    <item name="Thermal imaging camera" purpose="Visualizing pipe paths and leak locations" />
+    <item name="Tracer gas detector" purpose="Detecting micro-leaks using H2+N2 gas" />
+    <item name="Endoscopic camera" purpose="Visual inspection of sewage and drain pipes" />
+    <item name="Pressure gauge" purpose="Tightness testing of installations" />
+    <item name="UV dye kit" purpose="Locating sewage leaks with fluorescent dye" />
+  </equipment>
+  <pricing currency="PLN" insuranceCovered="true" vatInvoice="true">
+    <tier type="apartment" from="300" to="500" unit="flat visit" />
+    <tier type="house" from="400" to="700" unit="house visit" />
+    <tier type="commercial" from="500" unit="per project" />
+  </pricing>
+</wyciekipro>

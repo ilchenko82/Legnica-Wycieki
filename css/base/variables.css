@@ -1,0 +1,117 @@
+/* ==========================================================================
+   Wycieki Dolny Śląsk — Design Tokens (CSS Custom Properties)
+   Slate Navy, Emerald Cyan & Warm Amber Gold theme — professional, hydro-protective
+   ========================================================================== */
+
+:root {
+  /* ── Color Palette ─────────────────────────────────────────────────── */
+  
+  /* Primary — Deep Slate Navy (trust, solid structure) */
+  --color-primary: hsl(215, 55%, 18%);
+  --color-primary-light: hsl(215, 45%, 30%);
+  --color-primary-dark: hsl(215, 65%, 12%);
+  
+  /* Accent — Emerald Cyan / Teal (water detection, waterproofing seal) */
+  --color-accent: hsl(175, 80%, 40%);
+  --color-accent-light: hsl(175, 75%, 55%);
+  --color-accent-dark: hsl(175, 85%, 30%);
+  --color-accent-glow: hsla(175, 85%, 45%, 0.35);
+  
+  /* CTA / Emergency — Warm Amber Gold */
+  --color-cta: hsl(38, 95%, 50%);
+  --color-cta-hover: hsl(38, 95%, 58%);
+  --color-cta-dark: hsl(38, 90%, 42%);
+  
+  /* Success */
+  --color-success: hsl(155, 70%, 40%);
+  
+  /* Backgrounds — Light & modern contrast */
+  --color-bg: hsl(210, 25%, 99%);
+  --color-bg-alt: hsl(210, 20%, 96%);
+  --color-bg-card: hsl(0, 0%, 100%);
+  --color-bg-hero: linear-gradient(135deg, hsl(215, 60%, 16%) 0%, hsl(200, 50%, 22%) 50%, hsl(175, 55%, 28%) 100%);
+  --color-bg-section-dark: hsl(215, 50%, 16%);
+  
+  /* Text */
+  --color-text: hsl(215, 30%, 16%);
+  --color-text-light: hsl(215, 15%, 42%);
+  --color-text-muted: hsl(215, 10%, 60%);
+  --color-text-on-dark: hsl(210, 25%, 96%);
+  --color-text-on-dark-muted: hsl(210, 15%, 75%);
+  
+  /* Borders & Shadows */
+  --color-border: hsl(210, 15%, 88%);
+  --color-border-light: hsl(210, 10%, 94%);
+  --shadow-sm: 0 1px 3px hsla(215, 30%, 15%, 0.06);
+  --shadow-md: 0 4px 12px hsla(215, 30%, 15%, 0.08);
+  --shadow-lg: 0 8px 30px hsla(215, 30%, 15%, 0.12);
+  --shadow-xl: 0 16px 50px hsla(215, 30%, 15%, 0.15);
+  --shadow-accent: 0 4px 20px hsla(175, 80%, 40%, 0.25);
+  --shadow-card-hover: 0 12px 40px hsla(175, 80%, 40%, 0.18);
+  
+  /* ── Typography ────────────────────────────────────────────────────── */
+  --font-heading: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --font-body: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --font-mono: 'Roboto Mono', 'Consolas', monospace;
+  
+  /* Font sizes — fluid scale */
+  --text-xs: clamp(0.7rem, 0.65rem + 0.25vw, 0.8rem);
+  --text-sm: clamp(0.8rem, 0.75rem + 0.25vw, 0.9rem);
+  --text-base: clamp(0.81rem, 0.77rem + 0.25vw, 0.95rem); /* Reduced 15% mobile, 10% PC */
+  --text-lg: clamp(1.1rem, 1rem + 0.5vw, 1.25rem);
+  --text-xl: clamp(1.25rem, 1.1rem + 0.75vw, 1.5rem);
+  --text-2xl: clamp(1.5rem, 1.25rem + 1.25vw, 2rem);
+  --text-3xl: clamp(1.85rem, 1.5rem + 1.75vw, 2.75rem);
+  --text-4xl: clamp(2.25rem, 1.75rem + 2.5vw, 3.5rem);
+  
+  /* Font weights */
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --fw-extrabold: 800;
+  
+  /* Line heights */
+  --lh-tight: 1.2;
+  --lh-snug: 1.35;
+  --lh-normal: 1.6;
+  --lh-relaxed: 1.75;
+  
+  /* ── Spacing (reduced ~10%) ──────────────────────────────────────────── */
+  --space-xs: 0.2rem;     /* 3px */
+  --space-sm: 0.45rem;    /* 7px */
+  --space-md: 0.9rem;     /* 14px */
+  --space-lg: 1.35rem;    /* 22px */
+  --space-xl: 1.8rem;     /* 29px */
+  --space-2xl: 2.7rem;    /* 43px */
+  --space-3xl: 3.6rem;    /* 58px */
+  --space-4xl: 5.4rem;    /* 86px */
+  --space-section: clamp(1.4rem, 1.1rem + 1.8vw, 2.5rem);
+  
+  /* ── Layout ────────────────────────────────────────────────────────── */
+  --container-max: 1200px;
+  --container-narrow: 900px;
+  --container-padding: clamp(1rem, 0.5rem + 2.5vw, 2rem);
+  
+  /* ── Border Radius ─────────────────────────────────────────────────── */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+  
+  /* ── Transitions ───────────────────────────────────────────────────── */
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+  --transition-slow: 400ms ease;
+  --transition-spring: 350ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  
+  /* ── Z-index Scale ─────────────────────────────────────────────────── */
+  --z-base: 1;
+  --z-dropdown: 10;
+  --z-sticky: 50;
+  --z-header: 100;
+  --z-overlay: 200;
+  --z-modal: 300;
+  --z-toast: 400;
+}

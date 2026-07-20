@@ -1,0 +1,23 @@
+# Налаштування кодування за замовчуванням для всіх текстових файлів
+AddDefaultCharset UTF-8
+
+<IfModule mod_headers.c>
+    # Заборона кешування (щоб зміни на сайті відразу відображалися у користувачів)
+    Header set Cache-Control "max-age=0, must-revalidate"
+</IfModule>
+
+# Налаштування типу контенту та мови тільки для HTML-файлів,
+# щоб не зламати відображення стилів (CSS), скриптів (JS) та зображень
+<FilesMatch "\.html$">
+    <IfModule mod_headers.c>
+        Header set Content-Type "text/html; charset=UTF-8"
+        Header set Content-Language "pl"
+    </IfModule>
+</FilesMatch>
+
+# Дозвіл CORS для файлів даних
+<FilesMatch "\.(json|xml|csv)$">
+    <IfModule mod_headers.c>
+        Header set Access-Control-Allow-Origin "*"
+    </IfModule>
+</FilesMatch>

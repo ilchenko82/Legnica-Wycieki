@@ -1,0 +1,6 @@
+ID,Name_PL,Name_EN,Methods,Price_From_PLN
+pipe-leak,"Lokalizacja wyciekow z rur","Pipe Leak Detection","Acoustic, Tracer gas, Thermal imaging",300
+underfloor-heating,"Ogrzewanie podlogowe","Underfloor Heating Diagnostics","Thermal imaging, Tracer gas, Pressure test",400
+roof-terrace,"Dachy i tarasy","Roof and Terrace Waterproofing","Smoke test, Moisture measurement, Dye test",400
+sewage,"Kanalizacja","Sewage Inspection","Endoscopic camera, UV dye test",350
+drying,"Osuszanie po zalaniach","Post-Flood Drying","Industrial dehumidifiers, Air movers",contact

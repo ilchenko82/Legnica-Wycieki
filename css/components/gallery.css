@@ -1,0 +1,195 @@
+/* ==========================================================================
+   WyciekiPro — Gallery Section
+   Photo gallery with lightbox capability
+   ========================================================================== */
+
+.gallery {
+  background: var(--color-bg-alt);
+  padding-bottom: calc(var(--space-section) * 0.85);
+}
+
+.gallery__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-md);
+}
+
+.gallery__item {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  cursor: pointer;
+  aspect-ratio: 1;
+  background: linear-gradient(110deg, hsl(210, 15%, 90%) 8%, hsl(210, 15%, 95%) 18%, hsl(210, 15%, 90%) 33%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  to { background-position: -200% 0; }
+}
+
+.gallery__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow), filter var(--transition-slow), opacity 0.4s ease;
+  filter: contrast(1.15) saturate(1.1) brightness(1.02);
+  opacity: 0;
+}
+
+.gallery__item img.loaded {
+  opacity: 1;
+}
+
+.gallery__item:hover img {
+  transform: scale(1.08);
+}
+
+.gallery__item::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, hsla(210, 75%, 15%, 0.6) 0%, transparent 50%);
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.gallery__item:hover::after {
+  opacity: 1;
+}
+
+.gallery__item-label {
+  position: absolute;
+  bottom: var(--space-md);
+  left: var(--space-md);
+  right: var(--space-md);
+  color: #fff;
+  font-size: var(--text-sm);
+  font-weight: var(--fw-medium);
+  z-index: 2;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: all var(--transition-base);
+}
+
+.gallery__item:hover .gallery__item-label {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Span 2 columns for featured items */
+.gallery__item--wide {
+  grid-column: span 2;
+  aspect-ratio: 2/1;
+}
+
+/* ── Lightbox ──────────────────────────────────────────────────────────── */
+
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: hsla(0, 0%, 0%, 0.9);
+  z-index: var(--z-modal);
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(12px);
+}
+
+.lightbox.open {
+  display: flex;
+}
+
+.lightbox__img {
+  max-width: 90vw;
+  max-height: 85vh;
+  object-fit: contain;
+  border-radius: var(--radius-md);
+}
+
+.lightbox__close {
+  position: absolute;
+  top: var(--space-lg);
+  right: var(--space-lg);
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: hsla(0, 0%, 100%, 0.1);
+  border-radius: var(--radius-full);
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: background var(--transition-fast);
+}
+
+.lightbox__close:hover {
+  background: hsla(0, 0%, 100%, 0.2);
+}
+
+.lightbox__caption {
+  position: absolute;
+  bottom: var(--space-xl);
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  font-size: var(--text-base);
+  text-align: center;
+  max-width: 600px;
+}
+
+.lightbox__nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: hsla(0, 0%, 100%, 0.05);
+  color: #fff;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  z-index: 10;
+  border-radius: var(--radius-sm);
+}
+
+.lightbox__nav:hover {
+  background: hsla(0, 0%, 100%, 0.15);
+  scale: 1.05;
+}
+
+.lightbox__nav--prev {
+  left: var(--space-md);
+}
+
+.lightbox__nav--next {
+  right: var(--space-md);
+}
+
+@media (max-width: 768px) {
+  .lightbox__nav {
+    width: 40px;
+    height: 60px;
+    font-size: 1.5rem;
+    background: hsla(0, 0%, 100%, 0.1); /* Slightly more visible on mobile */
+  }
+}
+
+@media (max-width: 768px) {
+  .gallery__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-sm);
+  }
+}

@@ -1,0 +1,156 @@
+/* ==========================================================================
+   WyciekiPro — Typography
+   Google Fonts: Inter (loaded in HTML <head>)
+   ========================================================================== */
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-normal);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+}
+
+/* ── Headings ──────────────────────────────────────────────────────────── */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-tight);
+  color: var(--color-primary);
+}
+
+h1 {
+  font-size: var(--text-4xl);
+  font-weight: var(--fw-extrabold);
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: var(--text-3xl);
+  font-weight: var(--fw-bold);
+  letter-spacing: -0.015em;
+}
+
+h3 {
+  font-size: var(--text-2xl);
+  font-weight: var(--fw-semibold);
+}
+
+h4 {
+  font-size: var(--text-xl);
+  font-weight: var(--fw-semibold);
+}
+
+h5 {
+  font-size: var(--text-lg);
+  font-weight: var(--fw-medium);
+}
+
+/* ── Section Headers ───────────────────────────────────────────────────── */
+
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: var(--text-sm);
+  font-weight: var(--fw-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-accent);
+  margin-bottom: var(--space-md);
+}
+
+.section-label::before {
+  content: '';
+  display: inline-block;
+  width: 32px;
+  height: 2px;
+  background: var(--color-accent);
+  border-radius: var(--radius-full);
+}
+
+.section-title {
+  font-size: var(--text-3xl);
+  font-weight: var(--fw-bold);
+  color: var(--color-primary);
+  margin-bottom: var(--space-md);
+}
+
+.section-subtitle {
+  font-size: var(--text-lg);
+  color: var(--color-text-light);
+  max-width: 600px;
+  line-height: var(--lh-relaxed);
+}
+
+/* Dark section variants */
+.section--dark .section-label {
+  color: var(--color-accent-light);
+}
+
+.section--dark .section-title {
+  color: var(--color-text-on-dark);
+}
+
+.section--dark .section-subtitle {
+  color: var(--color-text-on-dark-muted);
+}
+
+/* ── Body Text ─────────────────────────────────────────────────────────── */
+
+p {
+  margin-bottom: var(--space-md);
+  color: var(--color-text);
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+.text-muted {
+  color: var(--color-text-muted);
+}
+
+.text-light {
+  color: var(--color-text-light);
+}
+
+.text-accent {
+  color: var(--color-accent);
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* ── Links ─────────────────────────────────────────────────────────────── */
+
+.link {
+  color: var(--color-accent-dark);
+  font-weight: var(--fw-medium);
+  transition: color var(--transition-fast);
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-underline-offset: 3px;
+}
+
+.link:hover {
+  color: var(--color-accent);
+  text-decoration-color: var(--color-accent);
+}
+
+/* ── Strong / Emphasis ─────────────────────────────────────────────────── */
+
+strong, b {
+  font-weight: var(--fw-semibold);
+}
+
+em, i {
+  font-style: italic;
+}
+
+small {
+  font-size: var(--text-sm);
+}

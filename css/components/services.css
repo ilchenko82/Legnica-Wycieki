@@ -1,0 +1,38 @@
+/* ==========================================================================
+   WyciekiPro — Services Section (O Wyciekach)
+   Leak types displayed as interactive cards
+   ========================================================================== */
+
+.services {
+  background: var(--color-bg);
+}
+
+.services__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-xl);
+}
+
+.services__grid .card {
+  text-align: center;
+}
+
+.services__grid .card__icon {
+  margin-left: auto;
+  margin-right: auto;
+  width: 72px;
+  height: 72px;
+  font-size: 2rem;
+}
+
+@media (max-width: 1024px) {
+  .services__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .services__grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,328 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Services — WyciekiPro</title>
+  <meta name="description" content="Szczegółowy opis usług wykrywania wycieków wody. Detection wycieków z rur, ogrzewania podłogowego, dachów i kanalizacji.">
+  <link rel="canonical" href="https://wyciekipro.pl/en/uslugi.html">
+  <meta property="og:title" content="Services — WyciekiPro">
+  <meta property="og:description" content="Szczegółowy opis usług wykrywania wycieków wody. Detection wycieków z rur, ogrzewania podłogowego, dachów i kanalizacji.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://wyciekipro.pl/uslugi.html">
+  <meta property="og:image" content="https://wyciekipro.pl/images/hero/og-image.jpg">
+  <meta property="og:site_name" content="WyciekiPro">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- CSS -->
+  <link rel="stylesheet" href="../css/base/reset.css">
+  <link rel="stylesheet" href="../css/base/variables.css">
+  <link rel="stylesheet" href="../css/base/typography.css">
+  <link rel="stylesheet" href="../css/layout/grid.css">
+  <link rel="stylesheet" href="../css/layout/responsive.css">
+  <link rel="stylesheet" href="../css/components/header.css">
+  <link rel="stylesheet" href="../css/components/footer.css">
+  <link rel="stylesheet" href="../css/components/cards.css">
+  <link rel="stylesheet" href="../css/components/buttons.css">
+  <link rel="stylesheet" href="../css/animations/animations.css">
+  <style>
+    .subpage {
+      padding-top: 90px;
+      min-height: calc(100vh - 300px);
+    }
+    .subpage .section-header {
+      margin-bottom: calc(var(--space-3xl) * 0.8);
+    }
+    .subpage .section-header h1 {
+      font-size: clamp(1.5rem, 1.3rem + 1vw, 2.2rem);
+    }
+
+    .service-detail__item {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: var(--space-4xl);
+      align-items: center;
+      margin-bottom: var(--space-5xl);
+    }
+    .service-detail__item:nth-child(even) {
+      direction: rtl;
+    }
+    .service-detail__item:nth-child(even) .service-detail__content {
+      direction: ltr;
+    }
+    .service-detail__content h2 {
+      font-size: var(--text-3xl);
+      color: var(--color-primary);
+      margin-bottom: var(--space-md);
+    }
+    .service-detail__content p {
+      font-size: var(--text-base);
+      color: var(--color-text-light);
+      line-height: 1.8;
+      margin-bottom: var(--space-md);
+    }
+    .service-detail__img-wrapper {
+      position: relative;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    }
+    .service-detail__img {
+      width: 100%;
+      display: block;
+      transition: transform 0.6s ease;
+    }
+    .service-detail__img-wrapper:hover .service-detail__img {
+      transform: scale(1.05);
+    }
+
+    .cta-block {
+      padding: var(--space-4xl) 0;
+      background: var(--color-bg-alt);
+      text-align: center;
+    }
+    .cta-card {
+      background: linear-gradient(135deg, #fff, #f8fafc);
+      padding: var(--space-3xl);
+      border-radius: var(--radius-2xl);
+      box-shadow: var(--shadow-xl);
+      border: 1px solid var(--color-border-light);
+    }
+    
+    .gallery-cta-fixed {
+      position: fixed;
+      bottom: var(--space-xl);
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 100;
+      display: flex;
+      gap: 12px;
+      width: max-content;
+    }
+    .fixed-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      padding: 10px 22px;
+      border-radius: var(--radius-md);
+      font-size: var(--text-sm);
+      font-weight: var(--fw-bold);
+      text-decoration: none;
+      transition: all var(--transition-base);
+      white-space: nowrap;
+      box-shadow: var(--shadow-lg);
+      border: 2px solid transparent;
+    }
+    .fixed-btn--phone {
+      background: var(--color-cta);
+      border-color: var(--color-cta);
+      color: #fff;
+    }
+    .fixed-btn--form {
+      background: hsla(195, 85%, 48%, 0.75);
+      border-color: hsla(0, 0%, 100%, 0.5);
+      color: #fff;
+    }
+    .fixed-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-xl);
+    }
+    .fixed-btn--phone:hover { 
+      background: var(--color-cta-hover);
+      border-color: var(--color-cta-hover);
+      color: #fff;
+    }
+    .fixed-btn--form:hover { 
+      background: var(--color-accent);
+      border-color: var(--color-accent);
+      color: #fff;
+    }
+
+    @media (max-width: 992px) {
+      .service-detail__item {
+        grid-template-columns: 1fr;
+        gap: var(--space-2xl);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .gallery-cta-fixed {
+        bottom: var(--space-lg);
+        gap: 10px;
+        width: calc(100% - 40px);
+        justify-content: center;
+      }
+      .fixed-btn {
+        padding: 10px 14px;
+        font-size: 0.8rem;
+        flex: 1;
+        justify-content: center;
+        border-width: 1.5px;
+      }
+    }
+  </style>
+
+  <link rel="alternate" hreflang="pl" href="https://wyciekipro.pl/uslugi.html">
+  <link rel="alternate" hreflang="en" href="https://wyciekipro.pl/en/uslugi.html">
+  <link rel="alternate" hreflang="x-default" href="https://wyciekipro.pl/uslugi.html">
+
+  <!-- WebPage Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://wyciekipro.pl/en/uslugi.html#webpage",
+    "url": "https://wyciekipro.pl/en/uslugi.html",
+    "name": "Water Leak Detection Services - WyciekiPro",
+    "description": "Pipe leak location, underfloor heating, roof and sewage diagnostics. Precise, non-invasive methods.",
+    "inLanguage": "en",
+    "datePublished": "2026-01-01",
+    "dateModified": "2026-05-20"
+  }
+  </script>
+</head>
+
+<body class="always-scrolled">
+
+  <!-- ═══ HEADER ═══ -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="index.html" class="header__logo" id="logo">
+        <span class="header__logo-icon">
+          <svg width="20" height="24" viewBox="0 0 20 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true">
+            <path d="M10 0C10 0 1 10.5 1 15.5C1 20.194 5.03 24 10 24C14.97 24 19 20.194 19 15.5C19 10.5 10 0 10 0Z"
+              fill="white" />
+            <path d="M13.5 18C13.5 16.07 12.43 14.4 10.83 13.56" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"
+              stroke-linecap="round" />
+          </svg>
+        </span>
+        <span class="header__logo-text">Wycieki<span>Pro</span></span>
+      </a>
+      <nav class="nav" id="main-nav">
+        <a href="cennik.html" class="nav__link">Pricing</a>
+        <a href="uslugi.html" class="nav__link active">Services</a>
+        <a href="sprzet.html" class="nav__link">Equipment</a>
+        <a href="about.html" class="nav__link">About Us</a>
+        <a href="galeria.html" class="nav__link">Gallery</a>
+        <a href="faq.html" class="nav__link">FAQ</a>
+        <a href="index.html#contact" class="nav__link">Contact</a>
+      </nav>
+      <div class="header__actions">
+        <div class="lang-switch" id="lang-switch">
+          <a href="../uslugi.html" class="lang-switch__btn">PL</a>
+          <a href="uslugi.html" class="lang-switch__btn active">EN</a>
+        </div>
+        <a href="tel:+48793499678" class="header__phone" id="header-phone">
+          <span class="header__phone-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff"
+              stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path
+                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.81.36 1.6.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c1.21.34 2 .57 2.81.7A2 2 0 0 1 22 16.92z" />
+            </svg></span>
+          <span class="header__phone-number">+48 793 499 678</span>
+        </a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="index.html" class="nav__link">Home</a>
+    <a href="cennik.html" class="nav__link">Pricing</a>
+    <a href="uslugi.html" class="nav__link active">Services</a>
+    <a href="sprzet.html" class="nav__link">Equipment</a>
+    <a href="about.html" class="nav__link">About Us</a>
+    <a href="galeria.html" class="nav__link">Gallery</a>
+    <a href="faq.html" class="nav__link">FAQ</a>
+    <a href="index.html#contact" class="nav__link">Contact</a>
+    <a href="tel:+48793499678" class="btn btn--phone mobile-menu__phone"><svg width="18" height="18" viewBox="0 0 24 24"
+        fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path
+          d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.81.36 1.6.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c1.21.34 2 .57 2.81.7A2 2 0 0 1 22 16.92z" />
+      </svg> +48 793 499 678</a>
+  </div>
+
+  <!-- ═══ SERVICES ═══ -->
+  <section class="subpage section">
+    <div class="container">
+      <div class="gallery-cta-fixed">
+        <a href="tel:+48793499678" class="fixed-btn fixed-btn--phone">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.81.36 1.6.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c1.21.34 2 .57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Call
+        </a>
+        <a href="index.html#contact" class="fixed-btn fixed-btn--form" onclick="openModal(event)">
+          Send Request
+        </a>
+      </div>
+      <div class="section-header">
+        <h1>Nasze Services</h1>
+        <p>Precise leak diagnostics, non-invasive fault location and full support in professional drying after flooding.</p>
+      </div>
+
+      <div class="service-detail__item reveal">
+        <div class="service-detail__content">
+          <div class="badge" style="margin-bottom: var(--space-sm); color: var(--color-accent); font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em;">Water Installations</div>
+          <h2>Detection wycieków z rur</h2>
+          <p>We use acoustic methods and tracer gas to precisely pinpoint the location of damage to water and heating pipes hidden in walls and floors. This avoids unnecessary demolition of the entire bathroom or kitchen.</p>
+          <p>Our specialists have certified equipment for detecting leaks in copper, PEX, PP and steel installations.</p>
+          <ul style="margin-top: var(--space-md); padding-left: var(--space-md); color: var(--color-text-light);">
+            <li>Cold and hot water installations (Z.W. / C.W.U.)</li>
+            <li>Sewage risers and drain pipes</li>
+            <li>Central heating installations (C.O.)</li>
+          </ul>
+        </div>
+        <div class="service-detail__img-wrapper">
+          <img src="../images/pipe_leak_pc.png" alt="Detection wycieków z rur" class="service-detail__img">
+        </div>
+      </div>
+
+      <div class="service-detail__item reveal">
+        <div class="service-detail__content">
+          <div class="badge" style="margin-bottom: var(--space-sm); color: var(--color-accent); font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em;">Thermal Imaging</div>
+          <h2>Underfloor Heating</h2>
+          <p>Underfloor heating failures are particularly difficult to locate without specialized equipment. We use high-resolution thermal imaging cameras to "see" the path of the pipes under the floor and identify a pinpoint leak.</p>
+          <p>This method allows precise identification of the fault location, limiting repair to replacing just one tile or a small fragment of panels.</p>
+        </div>
+        <div class="service-detail__img-wrapper">
+          <img src="../images/heating.png" alt="Underfloor Heating" class="service-detail__img">
+        </div>
+      </div>
+
+      <div class="service-detail__item reveal">
+        <div class="service-detail__content">
+          <div class="badge" style="margin-bottom: var(--space-sm); color: var(--color-accent); font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em;">Waterproofing</div>
+          <h2>Roofs and Terraces</h2>
+          <p>Leaks on flat roofs and terraces often appear in a completely different place than the source of the problem. We use smoke and moisture methods to find leaks in waterproofing.</p>
+          <p>A thorough analysis helps avoid the costly replacement of the entire roof covering, focusing only on the leaking point.</p>
+        </div>
+        <div class="service-detail__img-wrapper">
+          <img src="../images/roof.png" alt="Roofs and Terraces" class="service-detail__img">
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__bottom">
+        <span>© 2026 WyciekiPro. All rights reserved.</span>
+        <a href="index.html" style="color: #fff; text-decoration: underline;">Back to home page</a>
+      <p style="margin-top: 12px; font-size: 11px; opacity: 0.7;">Site materials are available under the <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener" style="color: #fff; text-decoration: underline;">Creative Commons CC BY 4.0</a> license.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

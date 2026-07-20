@@ -1,0 +1,83 @@
+/* ==========================================================================
+   WyciekiPro — Features Block (Advantages)
+   Key benefits summary right after Hero
+   ========================================================================== */
+
+.features {
+  padding: var(--space-section) 0;
+  background: var(--color-bg-alt);
+}
+
+.features__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-xl);
+}
+
+.features__card {
+  display: flex;
+  gap: var(--space-xl);
+  background: var(--color-bg-card);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border-light);
+  padding: var(--space-xl);
+  transition: all var(--transition-base);
+}
+
+.features__card:hover {
+  box-shadow: var(--shadow-card-hover);
+  border-color: var(--color-accent);
+  transform: translateY(-3px);
+}
+
+.features__card-icon {
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-dark));
+  border-radius: var(--radius-md);
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+.features__card-content {
+  flex: 1;
+}
+
+.features__card-title {
+  font-size: var(--text-lg);
+  font-weight: var(--fw-semibold);
+  color: var(--color-primary);
+  margin-bottom: var(--space-xs);
+}
+
+.features__card-text {
+  font-size: var(--text-base);
+  color: var(--color-text-light);
+  line-height: var(--lh-relaxed);
+}
+
+@media (max-width: 768px) {
+  .features {
+    padding-top: var(--space-xl);
+  }
+
+  .features__grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+
+  .features__card {
+    padding: var(--space-lg);
+    gap: var(--space-md);
+  }
+
+  .features__card-icon {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+  }
+}

@@ -1,0 +1,281 @@
+/* ==========================================================================
+   WyciekiPro — Contact Section (compact) + Modal Form
+   ========================================================================== */
+
+.contact.section {
+  background: linear-gradient(to bottom, var(--color-bg-alt), hsla(195, 85%, 48%, 0.1));
+  border-top: 1px solid var(--color-border-light);
+  padding-top: calc(var(--space-section) / 1.5);
+}
+
+/* ── Compact contact info row ─────────────────────────────────────────── */
+
+.contact__compact {
+  text-align: center;
+}
+
+.contact-info--row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-md);
+  margin-bottom: var(--space-md);
+}
+
+.contact-info__item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  text-align: left;
+}
+
+.contact-info__icon {
+  width: 34px;
+  height: 34px;
+  min-width: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: hsla(195, 85%, 48%, 0.1);
+  color: var(--color-accent);
+  border-radius: var(--radius-md);
+  font-size: 0.9rem;
+}
+
+.contact-info__label {
+  font-size: 0.65rem;
+  color: var(--color-text-muted);
+  margin-bottom: 2px;
+}
+
+.contact-info__value {
+  font-size: var(--text-sm);
+  font-weight: var(--fw-semibold);
+  color: var(--color-primary);
+}
+
+.contact-info__value a {
+  color: var(--color-primary);
+  transition: color var(--transition-fast);
+}
+
+.contact-info__value a:hover {
+  color: var(--color-accent);
+}
+
+/* CTA row */
+.contact__cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xl);
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--color-border-light);
+}
+
+/* Social links */
+.contact-socials {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+.social-link {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text-light);
+  font-size: 1rem;
+  transition: all var(--transition-fast);
+}
+
+.social-link:hover {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* ── Modal Overlay ────────────────────────────────────────────────────── */
+
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: hsla(210, 30%, 10%, 0.6);
+  backdrop-filter: blur(6px);
+  z-index: var(--z-modal);
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-overlay.open {
+  display: flex;
+}
+
+.modal {
+  position: relative;
+  background: #fff;
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl) var(--space-2xl);
+  max-width: 400px;
+  width: 90%;
+  box-shadow: var(--shadow-xl);
+  animation: modalIn 0.3s ease;
+}
+
+@keyframes modalIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.modal__close {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  background: none;
+  border: none;
+  font-size: 1.3rem;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  line-height: 1;
+  transition: color var(--transition-fast);
+}
+
+.modal__close:hover {
+  color: var(--color-text);
+}
+
+.modal__title {
+  font-size: var(--text-xl);
+  font-weight: var(--fw-bold);
+  color: var(--color-text);
+  margin-bottom: var(--space-xs);
+}
+
+.modal__subtitle {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-lg);
+}
+
+.modal__form .form-group {
+  margin-bottom: var(--space-md);
+}
+
+.modal__form input,
+.modal__form textarea {
+  width: 100%;
+  padding: 0.65rem 0.9rem;
+  background: var(--color-bg);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-size: var(--text-base);
+  font-family: inherit;
+  transition: all var(--transition-fast);
+}
+
+.modal__form textarea {
+  resize: vertical;
+  min-height: 4.5rem;
+}
+
+.modal__form input:focus,
+.modal__form textarea:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px var(--color-accent-glow);
+}
+
+/* Ensure identical placeholder styling across all browsers and elements */
+.modal__form input::-webkit-input-placeholder,
+.modal__form textarea::-webkit-input-placeholder {
+  color: hsl(210, 10%, 75%);
+  opacity: 1;
+  font-family: inherit;
+  font-size: var(--text-base);
+}
+
+.modal__form input::-moz-placeholder,
+.modal__form textarea::-moz-placeholder {
+  color: hsl(210, 10%, 75%);
+  opacity: 1;
+  font-family: inherit;
+  font-size: var(--text-base);
+}
+
+.modal__form input:-ms-input-placeholder,
+.modal__form textarea:-ms-input-placeholder {
+  color: hsl(210, 10%, 75%);
+  opacity: 1;
+  font-family: inherit;
+  font-size: var(--text-base);
+}
+
+.modal__form input::placeholder,
+.modal__form textarea::placeholder {
+  color: hsl(210, 10%, 75%);
+  opacity: 1;
+  font-family: inherit;
+  font-size: var(--text-base);
+}
+
+.modal__contact-label {
+  font-size: var(--text-sm);
+  font-weight: var(--fw-medium);
+  color: var(--color-text);
+  display: block;
+  margin-bottom: var(--space-sm);
+}
+
+.modal__contact-methods {
+  display: flex;
+  gap: var(--space-md);
+}
+
+.modal__method {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: var(--text-sm);
+  color: var(--color-text-light);
+  cursor: pointer;
+}
+
+.modal__method input[type="radio"] {
+  width: auto;
+  accent-color: var(--color-accent);
+}
+
+.modal__submit {
+  width: 100%;
+  margin-top: var(--space-sm);
+}
+
+/* ── Responsive ───────────────────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .contact-info--row {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .contact__cta {
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-info--row {
+    grid-template-columns: 1fr;
+  }
+}

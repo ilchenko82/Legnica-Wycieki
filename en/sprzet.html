@@ -1,0 +1,376 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Equipment Diagnostyczny — WyciekiPro</title>
+  <meta name="description" content="Our technologies: geophones, thermal imaging cameras, gas detectors and endoscopes. See how we detect leaks.">
+  <link rel="canonical" href="https://wyciekipro.pl/en/sprzet.html">
+  <meta property="og:title" content="Equipment Diagnostyczny — WyciekiPro">
+  <meta property="og:description" content="Our technologies: geophones, thermal imaging cameras, gas detectors and endoscopes. See how we detect leaks.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://wyciekipro.pl/sprzet.html">
+  <meta property="og:image" content="https://wyciekipro.pl/images/hero/og-image.jpg">
+  <meta property="og:site_name" content="WyciekiPro">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- CSS -->
+  <link rel="stylesheet" href="../css/base/reset.css">
+  <link rel="stylesheet" href="../css/base/variables.css">
+  <link rel="stylesheet" href="../css/base/typography.css">
+  <link rel="stylesheet" href="../css/layout/grid.css">
+  <link rel="stylesheet" href="../css/layout/responsive.css">
+  <link rel="stylesheet" href="../css/components/header.css">
+  <link rel="stylesheet" href="../css/components/footer.css">
+  <link rel="stylesheet" href="../css/components/equipment.css">
+  <link rel="stylesheet" href="../css/components/buttons.css">
+  <link rel="stylesheet" href="../css/animations/animations.css">
+  <style>
+    .subpage {
+      padding-top: 90px;
+      min-height: calc(100vh - 300px);
+    }
+    .subpage .section-header {
+      margin-bottom: calc(var(--space-3xl) * 0.8);
+    }
+    .subpage .section-header h1 {
+      font-size: clamp(1.5rem, 1.3rem + 1vw, 2.2rem);
+    }
+
+    .tech-card {
+      background: #fff;
+      border-radius: var(--radius-2xl);
+      padding: var(--space-3xl);
+      border: 1px solid var(--color-border-light);
+      margin-bottom: var(--space-3xl);
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      gap: var(--space-3xl);
+      align-items: center;
+      box-shadow: var(--shadow-lg);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .tech-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-xl);
+    }
+    .tech-card__img-wrapper {
+      background: #f8fafc;
+      border-radius: var(--radius-xl);
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .tech-card img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+    .tech-card h2 {
+      font-size: var(--text-2xl);
+      color: var(--color-primary);
+      margin-bottom: var(--space-md);
+    }
+    .tech-card p {
+      line-height: 1.7;
+      color: var(--color-text-light);
+    }
+
+    .cta-block {
+      padding: var(--space-4xl) 0;
+      background: var(--color-bg-alt);
+      text-align: center;
+    }
+
+    .gallery-cta-fixed {
+      position: fixed;
+      bottom: var(--space-xl);
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 100;
+      display: flex;
+      gap: 12px;
+      width: max-content;
+    }
+    .fixed-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      padding: 10px 22px;
+      border-radius: var(--radius-md);
+      font-size: var(--text-sm);
+      font-weight: var(--fw-bold);
+      text-decoration: none;
+      transition: all var(--transition-base);
+      white-space: nowrap;
+      box-shadow: var(--shadow-lg);
+      border: 2px solid transparent;
+    }
+    .fixed-btn--phone {
+      background: var(--color-cta);
+      border-color: var(--color-cta);
+      color: #fff;
+    }
+    .fixed-btn--form {
+      background: hsla(195, 85%, 48%, 0.75);
+      border-color: hsla(0, 0%, 100%, 0.5);
+      color: #fff;
+    }
+    .fixed-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-xl);
+    }
+    .fixed-btn--phone:hover { 
+      background: var(--color-cta-hover);
+      border-color: var(--color-cta-hover);
+      color: #fff;
+    }
+    .fixed-btn--form:hover { 
+      background: var(--color-accent);
+      border-color: var(--color-accent);
+      color: #fff;
+    }
+
+    @media (max-width: 992px) {
+      .tech-card {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .tech-card__img-wrapper {
+        max-width: 300px;
+        margin: 0 auto;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .gallery-cta-fixed {
+        bottom: var(--space-lg);
+        gap: 10px;
+        width: calc(100% - 40px);
+        justify-content: center;
+      }
+      .fixed-btn {
+        padding: 10px 14px;
+        font-size: 0.8rem;
+        flex: 1;
+        justify-content: center;
+        border-width: 1.5px;
+      }
+    }
+  </style>
+
+  <link rel="alternate" hreflang="pl" href="https://wyciekipro.pl/sprzet.html">
+  <link rel="alternate" hreflang="en" href="https://wyciekipro.pl/en/sprzet.html">
+  <link rel="alternate" hreflang="x-default" href="https://wyciekipro.pl/sprzet.html">
+
+  <!-- WebPage Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://wyciekipro.pl/en/sprzet.html#webpage",
+    "url": "https://wyciekipro.pl/en/sprzet.html",
+    "name": "Leak Detection Equipment - WyciekiPro",
+    "description": "Geophones, thermal imaging cameras, gas detectors and endoscopes. See how we detect leaks.",
+    "inLanguage": "en",
+    "datePublished": "2026-01-01",
+    "dateModified": "2026-05-20"
+  }
+  </script>
+</head>
+
+<body class="always-scrolled">
+
+  <!-- ═══ HEADER ═══ -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="index.html" class="header__logo" id="logo">
+        <span class="header__logo-icon">
+          <svg width="20" height="24" viewBox="0 0 20 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true">
+            <path d="M10 0C10 0 1 10.5 1 15.5C1 20.194 5.03 24 10 24C14.97 24 19 20.194 19 15.5C19 10.5 10 0 10 0Z"
+              fill="white" />
+            <path d="M13.5 18C13.5 16.07 12.43 14.4 10.83 13.56" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"
+              stroke-linecap="round" />
+          </svg>
+        </span>
+        <span class="header__logo-text">Wycieki<span>Pro</span></span>
+      </a>
+      <nav class="nav" id="main-nav">
+        <a href="cennik.html" class="nav__link">Pricing</a>
+        <a href="uslugi.html" class="nav__link">Services</a>
+        <a href="sprzet.html" class="nav__link active">Equipment</a>
+        <a href="about.html" class="nav__link">About Us</a>
+        <a href="galeria.html" class="nav__link">Gallery</a>
+        <a href="faq.html" class="nav__link">FAQ</a>
+        <a href="index.html#contact" class="nav__link">Contact</a>
+      </nav>
+      <div class="header__actions">
+        <div class="lang-switch" id="lang-switch">
+          <a href="../sprzet.html" class="lang-switch__btn">PL</a>
+          <a href="sprzet.html" class="lang-switch__btn active">EN</a>
+        </div>
+        <a href="tel:+48793499678" class="header__phone" id="header-phone">
+          <span class="header__phone-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff"
+              stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path
+                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.81.36 1.6.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c1.21.34 2 .57 2.81.7A2 2 0 0 1 22 16.92z" />
+            </svg></span>
+          <span class="header__phone-number">+48 793 499 678</span>
+        </a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="index.html" class="nav__link">Home</a>
+    <a href="cennik.html" class="nav__link">Pricing</a>
+    <a href="uslugi.html" class="nav__link">Services</a>
+    <a href="sprzet.html" class="nav__link active">Equipment</a>
+    <a href="about.html" class="nav__link">About Us</a>
+    <a href="galeria.html" class="nav__link">Gallery</a>
+    <a href="faq.html" class="nav__link">FAQ</a>
+    <a href="index.html#contact" class="nav__link">Contact</a>
+    <a href="tel:+48793499678" class="btn btn--phone mobile-menu__phone"><svg width="18" height="18" viewBox="0 0 24 24"
+        fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path
+          d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.81.36 1.6.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c1.21.34 2 .57 2.81.7A2 2 0 0 1 22 16.92z" />
+      </svg> +48 793 499 678</a>
+  </div>
+
+  <!-- ═══ EQUIPMENT ═══ -->
+  <section class="subpage section">
+    <div class="container">
+      <div class="gallery-cta-fixed">
+        <a href="tel:+48793499678" class="fixed-btn fixed-btn--phone">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.81.36 1.6.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c1.21.34 2 .57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Call
+        </a>
+        <a href="index.html#contact" class="fixed-btn fixed-btn--form" onclick="openModal(event)">
+          Send Request
+        </a>
+      </div>
+      <div class="section-header">
+        <h1>Nasz Equipment</h1>
+        <p>We use the most modern diagnostic equipment available on the market.</p>
+      </div>
+
+      <!-- 1. Geofon -->
+      <div class="tech-card reveal">
+        <div class="tech-card__img-wrapper">
+          <img src="../images/gallery/skuteczne-wykrywanie-geofonem.jpg" alt="Geofon" style="filter: contrast(1.1) brightness(1.1) saturate(1.1);">
+        </div>
+        <div>
+          <div class="badge" style="color: var(--color-accent); font-weight: 700; margin-bottom: 5px;">PRECISE PINPOINT LOCATION</div>
+          <h2>Highly Sensitive Geophone Trubolab A-10T3</h2>
+          <p>The electronic geophone comes into action at the stage of <strong>strict determination and precise location</strong> of the leak point. It hears the noise of water flowing from a damaged pipe.</p>
+          <p style="margin-top: var(--space-sm);">After verifying the system with a manometer and preliminary identifying the location, it is the geophone (and tracer gas) that is used to indicate the exact spot of 10-20 cm where the tile or floor will ultimately be broken.</p>
+        </div>
+      </div>
+
+      <!-- 2. Gaz -->
+      <div class="tech-card reveal">
+        <div class="tech-card__img-wrapper">
+          <img src="../images/gallery/lokalizacja-wycieku-gazem.jpg" alt="Detektor gazu">
+        </div>
+        <div>
+          <div class="badge" style="color: var(--color-accent); font-weight: 700; margin-bottom: 5px;">PRECISE PINPOINT LOCATION</div>
+          <h2>Tracer gas (H2/N2) and detector</h2>
+          <p>The gas method is also a technology for <strong>direct and final, very precise location</strong> of the fault. Most often used for leaks that are "inaudible" to the geophone (very small leaks, heated installations in thick concrete).</p>
+          <p style="margin-top: var(--space-sm);">The installation is filled with gas, and our highly sensitive detector tracks hydrogen particles that escape from the fault straight up through the building materials.</p>
+        </div>
+      </div>
+
+      <!-- 3. Thermal Imaging -->
+      <div class="tech-card reveal">
+        <div class="tech-card__img-wrapper">
+          <img src="../images/gallery/wykrywanie-termowizyjne.jpg" alt="Thermal imaging camera" style="filter: contrast(1.05);">
+        </div>
+        <div>
+          <div class="badge" style="color: var(--color-primary); font-weight: 700; margin-bottom: 5px;">PRELIMINARY TESTING</div>
+          <h2>HD Thermal Camera</h2>
+          <p>Thermal imaging cameras are used for preliminary assessment of the working area and non-invasive mapping of temperature distribution under the floor or inside walls.</p>
+          <p style="margin-top: var(--space-sm);">They are perfectly suited for identifying the main zones where the problem occurs, especially in underfloor heating failures and hot water leaks. They help narrow down the search area before precise measurements.</p>
+        </div>
+      </div>
+
+      <!-- 4. Barwnik UV -->
+      <div class="tech-card reveal">
+        <div class="tech-card__img-wrapper">
+          <img src="../images/gallery/barwnik-uv.jpg" alt="Barwnik UV">
+        </div>
+        <div>
+          <div class="badge" style="color: var(--color-accent); font-weight: 700; margin-bottom: 5px;">INTERNAL LOCATION / SEWAGE</div>
+          <h2>Specialized UV Dye</h2>
+          <p>We use UV fluorescent dyes to test the tightness of complex drainage systems, leaking waterproofing, terraces and flat roofs.</p>
+          <p style="margin-top: var(--space-sm);">The introduced dyed water eventually penetrates through damaged areas of waterproofing or grout, and illuminating it with a UV flashlight flawlessly reveals the path taken by the water causing the leak.</p>
+        </div>
+      </div>
+
+      <!-- 5. Endoskopy -->
+      <div class="tech-card reveal">
+        <div class="tech-card__img-wrapper">
+          <img src="../images/gallery/kamera-endoskopowa-wyciek.jpg" alt="Endoskop">
+        </div>
+        <div>
+          <div class="badge" style="color: var(--color-primary); font-weight: 700; margin-bottom: 5px;">PRELIMINARY TESTING / INSPECTION</div>
+          <h2>Endoscopes and inspection cameras</h2>
+          <p>An inspection camera acts as the "eyes" of the professional wherever there is no physical access: in shafts, bathtub enclosures, inside pipes or under hot tubs.</p>
+          <p style="margin-top: var(--space-sm);">Live view allows inspecting suspicious areas for faulty joints, cracks, or sewage leaks, without the need to destroy drywall constructions.</p>
+        </div>
+      </div>
+
+      <!-- 6. Mierniki -->
+      <div class="tech-card reveal">
+        <div class="tech-card__img-wrapper">
+          <img src="../images/gallery/miernik-wilgotnosci.jpg" alt="Mierniki wilgotności">
+        </div>
+        <div>
+          <div class="badge" style="color: var(--color-primary); font-weight: 700; margin-bottom: 5px;">PRELIMINARY TESTING</div>
+          <h2>Moisture meters (Gann and Tramex)</h2>
+          <p>We use professional, non-invasive moisture meters from renowned brands (Gann and Tramex) to map the moisture levels in building materials.</p>
+          <p style="margin-top: var(--space-sm);">They serve for a preliminary assessment of the flooded property. They help distinguish dry fragments from those saturated with water, allowing us to follow the "water trail" right to the probable source of the leak.</p>
+        </div>
+      </div>
+
+      <!-- 7. Manometry i kompresor -->
+      <div class="tech-card reveal">
+        <div class="tech-card__img-wrapper">
+          <img src="../images/gallery/proby-cisnieniowe.jpg" alt="Manometry i kompresor">
+        </div>
+        <div>
+          <div class="badge" style="color: var(--color-primary); font-weight: 700; margin-bottom: 5px;">PRELIMINARY TESTING</div>
+          <h2>Manometry i kompresor</h2>
+          <p>Pressure tests are the absolute basis and the first test we perform upon arrival. Using precise manometers and a compressor, we check the tightness of each installation separately.</p>
+          <p style="margin-top: var(--space-sm);">This allows us to determine 100% clearly which pipeline has a leak: whether in the cold water, hot water (C.W.U.), or central heating (C.O.) system. It is a crucial stage of assessing the condition before we start accurate fault tracking.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__bottom">
+        <span>© 2026 WyciekiPro. All rights reserved.</span>
+        <a href="index.html" style="color: #fff; text-decoration: underline;">Back to home page</a>
+      <p style="margin-top: 12px; font-size: 11px; opacity: 0.7;">Site materials are available under the <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener" style="color: #fff; text-decoration: underline;">Creative Commons CC BY 4.0</a> license.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,203 @@
+/* ==========================================================================
+   WyciekiPro — Cards
+   Universal card component for services, equipment, cases
+   ========================================================================== */
+
+.card {
+  background: var(--color-bg-card);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border-light);
+  padding: var(--space-xl);
+  transition: all var(--transition-base);
+  position: relative;
+  overflow: hidden;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-card-hover);
+  border-color: var(--color-accent);
+  transform: translateY(-4px);
+}
+
+/* ── Card with icon ────────────────────────────────────────────────────── */
+
+.card__icon {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-light));
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-lg);
+  color: #fff;
+  font-size: 1.5rem;
+  box-shadow: 0 4px 15px hsla(195, 85%, 48%, 0.25);
+}
+
+.card__icon svg {
+  width: 28px;
+  height: 28px;
+}
+
+/* ── Card number (for process steps) ───────────────────────────────────── */
+
+.card__number {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-accent);
+  border-radius: var(--radius-full);
+  color: #fff;
+  font-size: var(--text-lg);
+  font-weight: var(--fw-bold);
+  margin-bottom: var(--space-lg);
+  flex-shrink: 0;
+}
+
+/* ── Card content ──────────────────────────────────────────────────────── */
+
+.card__title {
+  font-size: var(--text-lg);
+  font-weight: var(--fw-semibold);
+  color: var(--color-primary);
+  margin-bottom: var(--space-sm);
+}
+
+.card__text {
+  font-size: var(--text-base);
+  color: var(--color-text-light);
+  line-height: var(--lh-relaxed);
+}
+
+/* ── Card image variant ────────────────────────────────────────────────── */
+
+.card--image {
+  padding: 30px;
+  overflow: hidden;
+}
+
+.card--image .card__img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  padding: 0;
+  transition: transform var(--transition-slow);
+}
+
+.card--image:hover .card__img {
+  transform: scale(1.05);
+}
+
+.card--image .card__body {
+  padding: var(--space-md) 0 0 0;
+}
+
+/* ── Card on dark background ───────────────────────────────────────────── */
+
+.card--dark {
+  background: hsla(0, 0%, 100%, 0.05);
+  border-color: hsla(0, 0%, 100%, 0.1);
+  backdrop-filter: blur(12px);
+}
+
+.card--dark:hover {
+  background: hsla(0, 0%, 100%, 0.08);
+  border-color: var(--color-accent);
+}
+
+.card--dark .card__title {
+  color: var(--color-text-on-dark);
+}
+
+.card--dark .card__text {
+  color: var(--color-text-on-dark-muted);
+}
+
+/* ── Pricing card ──────────────────────────────────────────────────────── */
+
+.card--pricing {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: var(--space-xl) var(--space-lg);
+  position: relative;
+  height: 100%;
+}
+
+.card--pricing .btn {
+  margin-top: auto;
+  align-self: center;
+  width: 100%;
+  max-width: 60%;
+  min-width: max-content;
+}
+
+.card--pricing.featured {
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-accent);
+}
+
+.card__price {
+  font-size: var(--text-2xl);
+  font-weight: var(--fw-extrabold);
+  color: var(--color-primary);
+  margin: var(--space-sm) 0 var(--space-md);
+}
+
+.card__price span {
+  font-size: var(--text-base);
+  font-weight: var(--fw-regular);
+  color: var(--color-text-muted);
+}
+
+.card__features {
+  text-align: left;
+  margin: var(--space-xl) 0;
+}
+
+.card__features li {
+  padding: var(--space-sm) 0;
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: var(--text-base);
+  color: var(--color-text-light);
+}
+
+.card__features li::before {
+  content: '✓';
+  color: var(--color-accent);
+  font-weight: var(--fw-bold);
+  flex-shrink: 0;
+}
+
+/* ── Card short description (pricing cards without feature list) ─────────── */
+
+.card__desc {
+  font-size: var(--text-base);
+  color: var(--color-text-light);
+  line-height: var(--lh-relaxed);
+  margin: var(--space-xs) 0 var(--space-md);
+}
+
+@media (max-width: 768px) {
+  .card--pricing {
+    padding: var(--space-md);
+  }
+  .card__price {
+    font-size: var(--text-2xl);
+    margin: var(--space-sm) 0;
+  }
+  .card__desc {
+    margin: var(--space-sm) 0 var(--space-md);
+    font-size: var(--text-sm);
+  }
+  .card--pricing .btn {
+    padding: 0.5rem 1rem;
+    font-size: var(--text-sm);
+    max-width: 80%;
+  }
+}

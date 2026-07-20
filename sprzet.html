@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Sprzęt Diagnostyczny — Osuszanie & Wycieki</title>
+  <meta name="description" content="Nasze technologie: geofony, kamery termowizyjne, detektory gazu i endoskopy. Zobacz czym wykrywamy wycieki.">
+  <link rel="canonical" href="https://wyciekipro.pl/sprzet.html">
+  <meta property="og:title" content="Sprzęt Diagnostyczny — Osuszanie & Wycieki">
+  <meta property="og:description" content="Nasze technologie: geofony, kamery termowizyjne, detektory gazu i endoskopy. Zobacz czym wykrywamy wycieki.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://wyciekipro.pl/sprzet.html">
+  <meta property="og:image" content="https://wyciekipro.pl/images/hero/og-image.jpg">
+  <meta property="og:site_name" content="Osuszanie & Wycieki">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/base/reset.css">
+  <link rel="stylesheet" href="css/base/variables.css">
+  <link rel="stylesheet" href="css/base/typography.css">
+  <link rel="stylesheet" href="css/layout/grid.css">
+  <link rel="stylesheet" href="css/layout/responsive.css">
+  <link rel="stylesheet" href="css/components/header.css">
+  <link rel="stylesheet" href="css/components/footer.css">
+  <link rel="stylesheet" href="css/components/equipment.css">
+  <link rel="stylesheet" href="css/components/buttons.css">
+  <link rel="stylesheet" href="css/animations/animations.css">
+  <style>
+    .subpage {
+      padding-top: 90px;
+      min-height: calc(100vh - 300px);
+    }
+    .subpage .section-header {
+      margin-bottom: calc(var(--space-3xl) * 0.8);
+    }
+    .subpage .section-header h1 {
+      font-size: clamp(1.5rem, 1.3rem + 1vw, 2.2rem);
+    }
+
+    .tech-card {
+      background: #fff;
+      border-radius: var(--radius-2xl);
+      padding: var(--space-3xl);
+      border: 1px solid var(--color-border-light);
+      margin-bottom: var(--space-3xl);
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      gap: var(--space-3xl);
+      align-items: center;
+      box-shadow: var(--shadow-lg);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .tech-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-xl);
+    }
+    .tech-card__img-wrapper {
+      background: #f8fafc;
+      border-radius: var(--radius-xl);
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .tech-card img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+    .tech-card h2 {
+      font-size: var(--text-2xl);
+      color: var(--color-primary);
+      margin-bottom: var(--space-md);
+    }
+    .tech-card p {
+      line-height: 1.7;
+      color: var(--color-text-light);
+    }
+
+    .cta-block {
+      padding: var(--space-4xl) 0;
+      background: var(--color-bg-alt);
+      text-align: center;
+    }
+
+    .gallery-cta-fixed {
+      position: fixed;
+      bottom: var(--space-xl);
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 100;
+      display: flex;
+      gap: 12px;
+      width: max-content;
+    }
+    .fixed-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      padding: 10px 22px;
+      border-radius: var(--radius-md);
+      font-size: var(--text-sm);
+      font-weight: var(--fw-bold);
+      text-decoration: none;
+      transition: all var(--transition-base);
+      white-space: nowrap;
+      box-shadow: var(--shadow-lg);
+      border: 2px solid transparent;
+    }
+    .fixed-btn--phone {
+      background: var(--color-cta);
+      border-color: var(--color-cta);
+      color: #fff;
+    }
+    .fixed-btn--form {
+      background: hsla(195, 85%, 48%, 0.75);
+      border-color: hsla(0, 0%, 100%, 0.5);
+      color: #fff;
+    }
+    .fixed-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-xl);
+    }
+    .fixed-btn--phone:hover { 
+      background: var(--color-cta-hover);
+      border-color: var(--color-cta-hover);
+      color: #fff;
+    }
+    .fixed-btn--form:hover { 
+      background: var(--color-accent);
+      border-color: var(--color-accent);
+      color: #fff;
+    }
+
+    @media (max-width: 992px) {
+      .tech-card {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .tech-card__img-wrapper {
+        max-width: 300px;
+        margin: 0 auto;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .gallery-cta-fixed {
+        bottom: var(--space-lg);
+        gap: 10px;
+        width: calc(100% - 40px);
+        justify-content: center;
+      }
+      .fixed-btn {
+        padding: 10px 14px;
+        font-size: 0.8rem;
+        flex: 1;
+        justify-content: center;
+        border-width: 1.5px;
+      }
+    }
+  </style>
+
+  <link rel="alternate" hreflang="pl" href="https://wycieki-dolnyslask.pl/sprzet.html">
+  <link rel="alternate" hreflang="en" href="https://wycieki-dolnyslask.pl/en/sprzet.html">
+  <link rel="alternate" hreflang="x-default" href="https://wycieki-dolnyslask.pl/sprzet.html">
+
+  <!-- WebPage Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://wycieki-dolnyslask.pl/sprzet.html#webpage",
+    "url": "https://wycieki-dolnyslask.pl/sprzet.html",
+    "name": "Sprzet do Wykrywania Wyciekow - Wycieki Dolny Slask",
+    "description": "Geofony, kamery termowizyjne, detektory gazu i osuszacze. Sprawdz nasz profesjonalny sprzet diagnostyczny.",
+    "inLanguage": "pl",
+    "datePublished": "2026-01-01",
+    "dateModified": "2026-05-20"
+  }
+  </script>
+</head>
+
+<body class="always-scrolled">
+
+  <!-- ═══ HEADER ═══ -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="index.html" class="header__logo" id="logo">
+        <span class="header__logo-icon" style="background: var(--color-accent); width: 36px; height: 36px; border-radius: 9px; display: inline-flex; align-items: center; justify-content: center;">
+          <svg width="20" height="24" viewBox="0 0 24 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M12 0C12 0 2 12 2 18C2 23.52 6.48 28 12 28C17.52 28 22 23.52 22 18C22 12 12 0 12 0Z" fill="white" />
+          </svg>
+        </span>
+        <span class="header__logo-text">Osuszanie<span style="color: var(--color-cta);">&Wycieki</span></span>
+      </a>
+      <nav class="nav" id="main-nav">
+        <a href="uslugi.html" class="nav__link">Usługi</a>
+        <a href="cennik.html" class="nav__link">Cennik</a>
+        <a href="sprzet.html" class="nav__link active">Sprzęt</a>
+        <a href="index.html#why-us" class="nav__link">Rejon Działania</a>
+        <a href="galeria.html" class="nav__link">Galeria</a>
+        <a href="faq.html" class="nav__link">FAQ</a>
+        <a href="index.html#contact" class="nav__link">Kontakt</a>
+      </nav>
+      <div class="header__actions">
+        <div class="lang-switch" id="lang-switch">
+          <a href="sprzet.html" class="lang-switch__btn active">PL</a>
+          <a href="en/sprzet.html" class="lang-switch__btn">EN</a>
+        </div>
+        <a href="tel:+48577400943" class="header__phone" id="header-phone">
+          <span class="header__phone-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff"
+              stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path
+                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.81.36 1.6.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c1.21.34 2 .57 2.81.7A2 2 0 0 1 22 16.92z" />
+            </svg></span>
+          <span class="header__phone-number">+48 577 400 943</span>
+        </a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="index.html" class="nav__link">Strona Główna</a>
+    <a href="cennik.html" class="nav__link">Cennik</a>
+    <a href="uslugi.html" class="nav__link">Usługi</a>
+    <a href="sprzet.html" class="nav__link active">Sprzęt</a>
+    <a href="about.html" class="nav__link">O nas</a>
+    <a href="galeria.html" class="nav__link">Galeria</a>
+    <a href="faq.html" class="nav__link">FAQ</a>
+    <a href="index.html#contact" class="nav__link">Kontakt</a>
+    <a href="tel:+48577400943" class="btn btn--phone mobile-menu__phone"><svg width="18" height="18" viewBox="0 0 24 24"
+        fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path
+          d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.81.36 1.6.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c1.21.34 2 .57 2.81.7A2 2 0 0 1 22 16.92z" />
+      </svg> +48 577 400 943</a>
+  </div>
+
+  <!-- ═══ EQUIPMENT ═══ -->
+  <section class="subpage section">
+    <div class="container">
+      <div class="gallery-cta-fixed">
+        <a href="tel:+48577400943" class="fixed-btn fixed-btn--phone">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.81.36 1.6.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c1.21.34 2 .57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Zadzwoń
+        </a>
+        <a href="index.html#contact" class="fixed-btn fixed-btn--form" onclick="openModal(event)">
+          Wyślij Zgłoszenie
+        </a>
+      </div>
+      <div class="section-header">
+        <h1>Nasz Sprzęt</h1>
+        <p>Wykorzystujemy najnowocześniejszy sprzęt diagnostyczny dostępny na rynku.</p>
+      </div>
+
+      <!-- 1. Geofon -->
+      <div class="tech-card reveal">
+        <div class="tech-card__img-wrapper">
+          <img src="images/gallery/skuteczne-wykrywanie-geofonem.jpg" alt="Geofon" style="filter: contrast(1.1) brightness(1.1) saturate(1.1);">
+        </div>
+        <div>
+          <div class="badge" style="color: var(--color-accent); font-weight: 700; margin-bottom: 5px;">DOKŁADNA LOKALIZACJA PUNKTOWA</div>
+          <h2>Geofon wysokoczuły Trubolab A-10T3</h2>
+          <p>Geofon elektroniczny wkracza do akcji na etapie <strong>ścisłego ustalania i dokładnej lokalizacji</strong> punktu wycieku. Słyszy szum wypływającej wody z uszkodzonej rury.</p>
+          <p style="margin-top: var(--space-sm);">Po zweryfikowaniu instalacji manometrem i wstępnym wytypowaniu miejsca, to właśnie geofon (oraz gaz znacznikowy) służą do wskazania dokładnego miejsca o wymiarach 10-20 cm, w którym ostatecznie zostanie odkuta płytka lub rozkuta posadzka.</p>
+        </div>
+      </div>
+
+      <!-- 2. Gaz -->
+      <div class="tech-card reveal">
+        <div class="tech-card__img-wrapper">
+          <img src="images/gallery/lokalizacja-wycieku-gazem.jpg" alt="Detektor gazu">
+        </div>
+        <div>
+          <div class="badge" style="color: var(--color-accent); font-weight: 700; margin-bottom: 5px;">DOKŁADNA LOKALIZACJA PUNKTOWA</div>
+          <h2>Gaz znacznikowy (H2/N2) i detektor</h2>
+          <p>Metoda gazowa to również technologia <strong>bezpośredniej i ostatecznej, bardzo precyzyjnej lokalizacji</strong> usterki. Stosowana najczęściej przy wyciekach "niesłyszalnych" dla geofonu (bardzo małe ubytki, instalacje podgrzewane w grubym betonie).</p>
+          <p style="margin-top: var(--space-sm);">Instalacja jest nabijana gazem, a nasz niezwykle czuły detektor namierza cząsteczki wodoru, które ulatniają się z miejsca awarii prosto w górę przez materiały budowlane.</p>
+        </div>
+      </div>
+
+      <!-- 3. Termowizja -->
+      <div class="tech-card reveal">
+        <div class="tech-card__img-wrapper">
+          <img src="images/gallery/wykrywanie-termowizyjne.jpg" alt="Kamera termowizyjna" style="filter: contrast(1.05);">
+        </div>
+        <div>
+          <div class="badge" style="color: var(--color-primary); font-weight: 700; margin-bottom: 5px;">BADANIE WSTĘPNE</div>
+          <h2>Kamera termowizyjna HD</h2>
+          <p>Kamery termowizyjne służą do wstępnej oceny obszaru roboczego i bezinwazyjnego mapowania rozkładu temperatur pod posadzką lub wewnątrz ścian.</p>
+          <p style="margin-top: var(--space-sm);">Doskonale sprawdzają się na etapie typowania głównych stref występowania problemu, zwłaszcza przy awariach ogrzewania podłogowego oraz wyciekach gorącej wody. Pozwalają zawęzić teren poszukiwań przed przystąpieniem do precyzyjnych pomiarów.</p>
+        </div>
+      </div>
+
+      <!-- 4. Barwnik UV -->
+      <div class="tech-card reveal">
+        <div class="tech-card__img-wrapper">
+          <img src="images/gallery/barwnik-uv.jpg" alt="Barwnik UV">
+        </div>
+        <div>
+          <div class="badge" style="color: var(--color-accent); font-weight: 700; margin-bottom: 5px;">LOKALIZACJA WEWNĘTRZNA / KANALIZACJA</div>
+          <h2>Specjalistyczny Barwnik UV</h2>
+          <p>Stosujemy barwniki fluorescencyjne UV do badania szczelności skomplikowanych układów odpływowych, nieszczelnych hydroizolacji, tarasów i dachów płaskich.</p>
+          <p style="margin-top: var(--space-sm);">Wprowadzona zabarwiona woda po jakimś czasie przenika przez uszkodzone miejsca hydroizolacji czy fug, a podświetlenie latarką UV bezbłędnie demaskuje trasę, którą podąża woda wywołująca przeciek.</p>
+        </div>
+      </div>
+
+      <!-- 5. Endoskopy -->
+      <div class="tech-card reveal">
+        <div class="tech-card__img-wrapper">
+          <img src="images/gallery/kamera-endoskopowa-wyciek.jpg" alt="Endoskop">
+        </div>
+        <div>
+          <div class="badge" style="color: var(--color-primary); font-weight: 700; margin-bottom: 5px;">BADANIE WSTĘPNE / INSPEKCJA</div>
+          <h2>Endoskopy i kamery inspekcyjne</h2>
+          <p>Kamera inspekcyjna to "oczy" fachowca wszędzie tam, gdzie nie ma fizycznego dostępu: w szachtach, obudowach wanien, wnętrzach rur czy pod wannami z hydromasażem.</p>
+          <p style="margin-top: var(--space-sm);">Obraz na żywo pozwala zbadać podejrzane miejsca pod kątem wadliwych złączy, pęknięć czy rozszczelnień kanalizacji, bez konieczności niszczenia zabudowy g-k.</p>
+        </div>
+      </div>
+
+      <!-- 6. Mierniki -->
+      <div class="tech-card reveal">
+        <div class="tech-card__img-wrapper">
+          <img src="images/gallery/miernik-wilgotnosci.jpg" alt="Mierniki wilgotności">
+        </div>
+        <div>
+          <div class="badge" style="color: var(--color-primary); font-weight: 700; margin-bottom: 5px;">BADANIE WSTĘPNE</div>
+          <h2>Mierniki wilgotności (Gann i Tramex)</h2>
+          <p>Używamy profesjonalnych, bezinwazyjnych wilgotnościomierzy znanych marek (Gann i Tramex), aby sporządzić mapę zawilgocenia materiałów budowlanych.</p>
+          <p style="margin-top: var(--space-sm);">Służą one do wstępnej oceny stanu zalania obiektu. Pomagają odróżnić suche fragmenty od tych nasyconych wodą, co pozwala nam podążać "śladem wody" aż do prawdopodobnego źródła przecieku.</p>
+        </div>
+      </div>
+
+      <!-- 7. Manometry i kompresor -->
+      <div class="tech-card reveal">
+        <div class="tech-card__img-wrapper">
+          <img src="images/gallery/proby-cisnieniowe.jpg" alt="Manometry i kompresor">
+        </div>
+        <div>
+          <div class="badge" style="color: var(--color-primary); font-weight: 700; margin-bottom: 5px;">BADANIE WSTĘPNE</div>
+          <h2>Manometry i kompresor</h2>
+          <p>Próby ciśnieniowe to absolutna podstawa i pierwsze badanie, które wykonujemy po przyjeździe. Używając precyzyjnych manometrów i kompresora, sprawdzamy szczelność każdej z instalacji z osobna.</p>
+          <p style="margin-top: var(--space-sm);">Pozwala to w 100% jednoznacznie określić, w którym rurociągu jest wyciek: czy w instalacji wody zimnej, wody ciepłej (C.W.U.), czy też w obiegu centralnego ogrzewania (C.O.). To kluczowy etap oceny stanu, zanim rozpoczniemy dokładne namierzanie awarii.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__bottom">
+        <span>© 2026 Osuszanie & Wycieki. Wszelkie prawa zastrzeżone.</span>
+        <a href="index.html" style="color: #fff; text-decoration: underline;">Powrót do strony głównej</a>
+      <p style="margin-top: 12px; font-size: 11px; opacity: 0.7;">Materiaìy na stronie są dostępne na licencji <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener" style="color: #fff; text-decoration: underline;">Creative Commons CC BY 4.0</a>.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

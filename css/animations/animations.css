@@ -1,0 +1,112 @@
+/* ==========================================================================
+   WyciekiPro — Animations
+   Scroll-triggered reveals, micro-interactions, water effects
+   ========================================================================== */
+
+/* ── Scroll Reveal ─────────────────────────────────────────────────────── */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered children */
+.reveal-stagger > * {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.reveal-stagger.visible > *:nth-child(1) { transition-delay: 0.1s; }
+.reveal-stagger.visible > *:nth-child(2) { transition-delay: 0.2s; }
+.reveal-stagger.visible > *:nth-child(3) { transition-delay: 0.3s; }
+.reveal-stagger.visible > *:nth-child(4) { transition-delay: 0.4s; }
+.reveal-stagger.visible > *:nth-child(5) { transition-delay: 0.5s; }
+.reveal-stagger.visible > *:nth-child(6) { transition-delay: 0.6s; }
+
+.reveal-stagger.visible > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Slide from left */
+.reveal--left {
+  transform: translateX(-30px);
+}
+
+.reveal--left.visible {
+  transform: translateX(0);
+}
+
+/* Slide from right */
+.reveal--right {
+  transform: translateX(30px);
+}
+
+.reveal--right.visible {
+  transform: translateX(0);
+}
+
+/* Scale up */
+.reveal--scale {
+  transform: scale(0.95);
+}
+
+.reveal--scale.visible {
+  transform: scale(1);
+}
+
+/* ── Counter Animation ─────────────────────────────────────────────────── */
+
+.counter-animated {
+  display: inline-block;
+}
+
+/* ── Shimmer / Loading placeholder ─────────────────────────────────────── */
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.shimmer {
+  background: linear-gradient(90deg,
+    var(--color-bg-alt) 0%,
+    var(--color-bg) 50%,
+    var(--color-bg-alt) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* ── Floating animation (for decorative elements) ──────────────────────── */
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.float {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* ── Water wave at section dividers ────────────────────────────────────── */
+
+.wave-divider {
+  position: relative;
+  height: 60px;
+  overflow: hidden;
+}
+
+.wave-divider svg {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+}

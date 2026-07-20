@@ -1,0 +1,81 @@
+{
+  "company": {
+    "name": "WyciekiPro",
+    "founded": 2026,
+    "location": "Warsaw, Poland",
+    "coverage": "Nationwide (Poland)",
+    "phone": "+48793499678",
+    "email": "wyciekipro@gmail.com",
+    "website": "https://wyciekipro.pl",
+    "hours": "Daily 07:00-23:00",
+    "specialist": "Slawek (10+ years experience)"
+  },
+  "services": [
+    {
+      "id": "pipe-leak",
+      "name_pl": "Lokalizacja wyciekow z rur",
+      "name_en": "Pipe Leak Detection",
+      "description_pl": "Bezinwazyjna lokalizacja wyciekow z instalacji wody zimnej, cieplej i centralnego ogrzewania.",
+      "description_en": "Non-invasive leak detection in cold water, hot water, and central heating installations.",
+      "methods": ["Acoustic (geophone)", "Tracer gas (H2+N2)", "Thermal imaging"],
+      "price_from_pln": 300
+    },
+    {
+      "id": "underfloor-heating",
+      "name_pl": "Ogrzewanie podlogowe",
+      "name_en": "Underfloor Heating Diagnostics",
+      "description_pl": "Diagnostyka nieszczelnosci w wodnym ogrzewaniu podlogowym za pomoca termowizji i gazu znacznikowego.",
+      "description_en": "Leak diagnostics in water-based underfloor heating using thermal imaging and tracer gas.",
+      "methods": ["Thermal imaging", "Tracer gas", "Pressure test"],
+      "price_from_pln": 400
+    },
+    {
+      "id": "roof-terrace",
+      "name_pl": "Dachy i tarasy",
+      "name_en": "Roof & Terrace Waterproofing",
+      "description_pl": "Badanie szczelnosci hydroizolacji dachow plaskich, tarasow i balkonow metoda dymowa i wilgotnosciowa.",
+      "description_en": "Waterproofing integrity testing for flat roofs, terraces, and balconies using smoke and moisture methods.",
+      "methods": ["Smoke test", "Moisture measurement", "Dye test"],
+      "price_from_pln": 400
+    },
+    {
+      "id": "sewage",
+      "name_pl": "Kanalizacja",
+      "name_en": "Sewage Inspection",
+      "description_pl": "Inspekcja rur kanalizacyjnych kamera endoskopowa oraz proby barwnikowe UV.",
+      "description_en": "Sewage pipe inspection with endoscopic camera and UV dye tests.",
+      "methods": ["Endoscopic camera", "UV dye test"],
+      "price_from_pln": 350
+    },
+    {
+      "id": "drying",
+      "name_pl": "Osuszanie po zalaniach",
+      "name_en": "Post-Flood Drying",
+      "description_pl": "Profesjonalne osuszanie budynkow po zalaniach we wspolpracy z partnerami.",
+      "description_en": "Professional building drying after floods in cooperation with trusted partners.",
+      "methods": ["Industrial dehumidifiers", "Air movers"],
+      "price_from_pln": null
+    }
+  ],
+  "equipment": [
+    {"name": "Geophone", "purpose": "Acoustic leak detection underground and in walls"},
+    {"name": "Thermal imaging camera", "purpose": "Visualizing pipe paths and leak locations through temperature differences"},
+    {"name": "Tracer gas detector", "purpose": "Detecting micro-leaks using hydrogen-nitrogen gas mixture"},
+    {"name": "Endoscopic camera", "purpose": "Visual inspection of sewage and drain pipes"},
+    {"name": "Pressure gauge", "purpose": "Tightness testing of water and heating installations"},
+    {"name": "UV dye kit", "purpose": "Locating sewage leaks with fluorescent dye"}
+  ],
+  "pricing": {
+    "currency": "PLN",
+    "apartment": {"from": 300, "to": 500, "unit": "flat visit"},
+    "house": {"from": 400, "to": 700, "unit": "house visit"},
+    "commercial": {"from": 500, "to": null, "unit": "per project"},
+    "insurance_covered": true,
+    "vat_invoice": true
+  },
+  "coverage_areas": [
+    "Warsaw", "Krakow", "Wroclaw", "Poznan", "Gdansk", "Lodz",
+    "Katowice", "Lublin", "Bialystok", "Szczecin"
+  ],
+  "last_updated": "2026-05-20"
+}

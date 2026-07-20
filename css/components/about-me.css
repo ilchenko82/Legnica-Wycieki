@@ -1,0 +1,246 @@
+/* ==========================================================================
+   ABOUT ME (SPECIALIST PROFILE)
+   ========================================================================== */
+
+/* 
+   VARIANT 1: Classic Expert Profile 
+   Uses a clean 2-column grid, professional and trustworthy.
+*/
+.about-v1 {
+  background: var(--color-bg);
+  padding: var(--space-section) 0;
+}
+
+.about-v1__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-2xl);
+  align-items: center;
+}
+
+@media (min-width: 992px) {
+  .about-v1__grid {
+    grid-template-columns: 5fr 7fr;
+  }
+}
+
+.about-v1__image-wrapper {
+  position: relative;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Subtle decorative border element */
+.about-v1__image-wrapper::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-xl);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  pointer-events: none;
+}
+
+.about-v1__image {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4/5;
+  object-fit: cover;
+  display: block;
+  transform: scale(1.02); /* Slight scale to ensure no gaps */
+}
+
+.about-v1__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.about-v1__subtitle {
+  color: var(--color-accent);
+  font-weight: var(--fw-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.875rem;
+}
+
+.about-v1__title {
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: var(--fw-bold);
+  line-height: 1.1;
+  color: var(--color-text);
+  margin-bottom: var(--space-xs);
+}
+
+.about-v1__desc {
+  font-size: var(--text-lg);
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin-bottom: var(--space-md);
+}
+
+.about-v1__features {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-lg);
+}
+
+.about-v1__feature {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-sm);
+}
+
+.about-v1__feature-icon {
+  color: var(--color-accent);
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.about-v1__feature-text {
+  font-weight: var(--fw-medium);
+  color: var(--color-text);
+}
+
+
+/* 
+   VARIANT 2: The Founder Card 
+   A wide, premium, SaaS-like card layout.
+*/
+.about-v2 {
+  background: var(--color-bg);
+  padding: var(--space-section) 0;
+}
+
+.about-v2__card {
+  background: var(--color-bg-card);
+  border-radius: var(--radius-xl);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--color-border-light);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .about-v2__card {
+    flex-direction: row;
+    align-items: stretch;
+  }
+}
+
+/* --- Image column --- */
+.about-v2__image-col {
+  width: 100%;
+  height: 380px;          /* Більше на мобільному, щоб бачити обладнання/ноги */
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+@media (min-width: 768px) {
+  .about-v2__image-col {
+    position: relative;   /* restore absolute strategy for tablet/desktop */
+    width: 40%;           /* Трохи вужче на таблеті */
+    height: auto;
+    min-height: 340px;    /* Пропорційно менша висота для таблета */
+    align-self: stretch;
+  }
+}
+
+@media (min-width: 992px) {
+  .about-v2__image-col {
+    width: 42%;
+    min-height: 420px;    /* Оригінальна висота для ПК */
+  }
+}
+
+/* Image itself */
+.about-v2__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;  /* face/head always visible, legs cut if needed */
+}
+
+@media (min-width: 768px) {
+  .about-v2__image {
+    position: absolute;
+    inset: 0;
+  }
+}
+
+.about-v2__content-col {
+  padding: var(--space-lg) var(--space-md); /* Компактніше на мобільному */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .about-v2__content-col {
+    width: 60%;
+    padding: var(--space-xl) var(--space-lg); /* Менші відступи на таблеті */
+  }
+}
+
+@media (min-width: 992px) {
+  .about-v2__content-col {
+    width: 58%;
+    padding: var(--space-2xl); /* Оригінальні відступи на ПК */
+  }
+}
+
+.about-v2__quote-icon {
+  color: var(--color-accent);
+  opacity: 0.2;
+  margin-bottom: var(--space-md);
+}
+
+.about-v2__quote {
+  font-size: clamp(1.2rem, 2.5vw, 1.75rem); /* Змінено clamp для кращого масштабування на таблеті */
+  font-weight: var(--fw-semibold);
+  line-height: 1.3;
+  color: var(--color-primary);
+  margin-bottom: var(--space-lg);
+  font-style: italic;
+}
+
+.about-v2__details {
+  border-left: 3px solid var(--color-accent);
+  padding-left: var(--space-md);
+  margin-bottom: var(--space-xl);
+}
+
+.about-v2__details p {
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  font-size: 0.95rem; /* Трохи менший текст для мобільних/таблетів */
+}
+
+@media (min-width: 992px) {
+  .about-v2__details p {
+    font-size: 1rem; /* Стандартний на ПК */
+  }
+}
+
+.about-v2__footer {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.about-v2__name {
+  font-weight: var(--fw-bold);
+  font-size: var(--text-lg);
+  color: var(--color-text);
+}
+
+.about-v2__role {
+  font-size: var(--text-sm);
+  color: var(--color-accent);
+  font-weight: var(--fw-medium);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}

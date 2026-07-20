@@ -1,0 +1,257 @@
+/* ==========================================================================
+   WyciekiPro — Reviews / Opinions Section (Opinie)
+   Google Reviews integration + Carousel Slider
+   ========================================================================== */
+
+.reviews.section {
+  background: var(--color-bg);
+  padding-bottom: calc(var(--space-section) / 1.5);
+  position: relative;
+}
+
+/* ── Option A: Horizontal Carousel (Sleek CSS Scroll Snap) ────────────────── */
+
+.reviews-carousel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--space-xl);
+}
+
+.reviews-carousel__viewport {
+  width: 100%;
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding: var(--space-md) 4px;
+  scrollbar-width: none; /* Firefox */
+}
+
+.reviews-carousel__viewport::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
+}
+
+/* Compact Review Cards (Optimized, fitting 4 on desktop screen) */
+.reviews-carousel__viewport .review-card {
+  flex: 0 0 calc(25% - 9px); /* 4 cards on desktop */
+  scroll-snap-align: start;
+  min-width: 188px; /* Expanded by 10% for improved readability */
+  background: var(--color-bg-card);
+  border-radius: var(--radius-md);
+  padding: 14px; /* Expanded by ~10% */
+  border: 1px solid var(--color-border-light);
+  transition: all var(--transition-base);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.reviews-carousel__viewport .review-card:hover {
+  box-shadow: var(--shadow-sm);
+  border-color: var(--color-accent);
+  transform: translateY(-2px);
+}
+
+.review-card__header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-xs);
+}
+
+.review-card__avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: var(--radius-full);
+  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-dark));
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: var(--fw-bold);
+  font-size: var(--text-sm);
+}
+
+.review-card__avatar-img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.review-card__name {
+  font-weight: var(--fw-semibold);
+  font-size: 13px;
+  color: var(--color-text);
+  line-height: 1.2;
+}
+
+.review-card__date {
+  font-size: 10px;
+  color: var(--color-text-muted);
+  line-height: 1.2;
+}
+
+.review-card__stars {
+  color: hsl(45, 100%, 50%);
+  font-size: var(--text-xs);
+  margin-bottom: var(--space-xs);
+  letter-spacing: 1px;
+}
+
+.review-card__text {
+  font-size: 13px;
+  color: var(--color-text-light);
+  line-height: 1.35;
+  font-style: italic;
+  margin-bottom: var(--space-xs);
+  display: -webkit-box;
+  -webkit-line-clamp: 4; /* Clamps very long reviews to 4 lines maximum */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.review-card__source {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-size: 10px;
+  color: var(--color-text-muted);
+  margin-top: auto;
+}
+
+/* Carousel Nav Buttons */
+.reviews-carousel__btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-full);
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all var(--transition-base);
+  box-shadow: var(--shadow-sm);
+}
+
+.reviews-carousel__btn:hover {
+  background: var(--color-accent);
+  color: #fff;
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-md);
+}
+
+.reviews-carousel__btn--prev {
+  left: -19px;
+}
+
+.reviews-carousel__btn--next {
+  right: -19px;
+}
+
+/* ── Breakpoints ──────────────────────────────────────────────────────── */
+
+/* Tablets: 3 cards visible */
+@media (max-width: 1024px) {
+  .reviews-carousel__viewport .review-card {
+    flex: 0 0 calc(33.333% - 8px);
+    min-width: 165px; /* Expanded by 10% */
+    padding: 12px;
+  }
+  .reviews-carousel__btn--prev { left: -10px; }
+  .reviews-carousel__btn--next { right: -10px; }
+}
+
+/* Mobile: at least 2 cards visible side-by-side */
+@media (max-width: 600px) {
+  .reviews-carousel__viewport {
+    gap: 10px; /* Slightly tighter gap on mobile, expanded by ~10% */
+  }
+  .reviews-carousel__viewport .review-card {
+    flex: 0 0 calc(50% - 5px); /* 2 cards side-by-side */
+    min-width: 132px; /* Expanded by 10% (from 120px) */
+    padding: 10px; /* Expanded by ~10% */
+    border-radius: var(--radius-sm);
+  }
+  .reviews-carousel__btn { display: none; } /* Swiping is enough on mobile */
+  .review-card__avatar {
+    width: 28px;
+    height: 28px;
+    font-size: var(--text-xs);
+  }
+  .review-card__avatar-img {
+    width: 28px;
+    height: 28px;
+  }
+  .review-card__name {
+    font-size: 12px;
+  }
+  .review-card__date {
+    font-size: 9px;
+  }
+  .review-card__stars {
+    font-size: 11px;
+    margin-bottom: 4px;
+  }
+  .review-card__text {
+    font-size: 12px;
+    line-height: 1.35;
+    -webkit-line-clamp: 3; /* Shorter clamp on small mobile devices */
+  }
+  .review-card__source {
+    font-size: 9px;
+  }
+}
+
+/* ── Google Rating Summary (25% smaller for a neater look) ──────────────── */
+
+.reviews__summary {
+  text-align: center;
+  margin-bottom: var(--space-lg);
+}
+
+.reviews__rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px; /* Reduced by 25% */
+  padding: 6px 16px; /* Reduced by 25% */
+  background: var(--color-bg-card);
+  border-radius: var(--radius-full);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.reviews__rating-number {
+  font-size: 18px; /* Reduced from 24px (25% smaller) */
+  font-weight: var(--fw-extrabold);
+  color: var(--color-primary);
+}
+
+.reviews__rating-stars {
+  color: hsl(45, 100%, 50%);
+  font-size: 12px; /* Reduced from 16px (25% smaller) */
+}
+
+.reviews__rating-count {
+  font-size: 10px; /* Reduced from 12px (~20% smaller) */
+  color: var(--color-text-muted);
+}
+
+/* ── CTA to leave review ──────────────────────────────────────────────── */
+
+.reviews__cta {
+  text-align: center;
+  padding: var(--space-md) var(--space-xl);
+  background: hsla(195, 85%, 48%, 0.06);
+  border: 1px dashed var(--color-accent);
+  border-radius: var(--radius-md);
+}

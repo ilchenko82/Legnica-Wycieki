@@ -1,0 +1,94 @@
+/* ==========================================================================
+   WyciekiPro — Grid & Layout System
+   ========================================================================== */
+
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+}
+
+.container--narrow {
+  max-width: var(--container-narrow);
+}
+
+/* ── Sections ──────────────────────────────────────────────────────────── */
+
+.section {
+  padding-top: var(--space-section);
+  padding-bottom: var(--space-section);
+}
+
+.section--dark {
+  background-color: var(--color-bg-section-dark);
+  color: var(--color-text-on-dark);
+}
+
+.section--alt {
+  background-color: var(--color-bg-alt);
+}
+
+.section-header {
+  text-align: center;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: var(--space-3xl);
+}
+
+/* ── Grid ──────────────────────────────────────────────────────────────── */
+
+.grid {
+  display: grid;
+  gap: var(--space-xl);
+}
+
+.grid--2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid--3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid--4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* ── Flex Utilities ────────────────────────────────────────────────────── */
+
+.flex {
+  display: flex;
+}
+
+.flex--center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex--between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex--column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex--gap-sm {
+  gap: var(--space-sm);
+}
+
+.flex--gap-md {
+  gap: var(--space-md);
+}
+
+.flex--gap-lg {
+  gap: var(--space-lg);
+}
