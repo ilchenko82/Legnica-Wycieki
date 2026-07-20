@@ -99,14 +99,14 @@
   <!-- ═══ HEADER ═══ -->
   <header class="header" id="header">
     <div class="container header__inner">
-      <a href="index.html" class="header__logo" id="logo">
-        <span class="header__logo-icon" style="background: var(--color-accent); width: 36px; height: 36px; border-radius: 9px; display: inline-flex; align-items: center; justify-content: center;">
-          <svg width="20" height="24" viewBox="0 0 24 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M12 0C12 0 2 12 2 18C2 23.52 6.48 28 12 28C17.52 28 22 23.52 22 18C22 12 12 0 12 0Z" fill="white" />
+      <a href="index.html" class="header__logo" id="logo"><span class="header__logo-icon" style="background: linear-gradient(135deg, var(--color-cta) 0%, var(--color-accent) 100%); width: 40px; height: 40px; border-radius: 12px; display: inline-flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px hsla(175, 80%, 40%, 0.3);">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M12 2C12 2 5 9.5 5 14.5C5 18.37 8.13 21.5 12 21.5C15.87 21.5 19 18.37 19 14.5C19 9.5 12 2 12 2Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M8 14C8 12 11 11 12 10C13 11 16 12 16 14" stroke="white" stroke-width="2" stroke-linecap="round"/>
+            <path d="M6 18C8.5 16.5 15.5 16.5 18 18" stroke="white" stroke-width="2" stroke-linecap="round"/>
           </svg>
         </span>
-        <span class="header__logo-text">Osuszanie<span style="color: var(--color-cta);">&Wycieki</span></span>
-      </a>
+        <span class="header__logo-text">Suszymy<span style="color: var(--color-cta);">&Wycieki</span></span></a>
       <nav class="nav" id="main-nav">
         <a href="cennik.html" class="nav__link">Cennik</a>
         <a href="uslugi.html" class="nav__link">Usługi</a>
@@ -177,33 +177,15 @@
           <div class="faq-content" id="faq-ans-1">
             <div class="faq-content__inner">
               <p>Tak, wszystkie nasze badania diagnostyczne przeprowadzamy w sposób w pełni bezinwazyjny. Wykorzystujemy zaawansowane metody akustyczne (geofon), gaz znacznikowy (mieszankę wodoru i azotu) oraz profesjonalną termowizję.</p>
-              <p>Dzięki temu zazwyczaj jesteśmy w stanie precyzyjnie namierzyć nieszczelność pod posadzką lub w ścianach bez konieczności rozkuwania połowy domu. W większości przypadków kucie ogranicza się do jednego wskazanego punktu (najczęściej o wymiarach jednej lub dwóch płytek), co pozwala na sprawne i jak najmniej inwazyjne usunięcie usterki.</p>
+              <p>Dzięki temu precyzyjnie namierzamy nieszczelność pod posadzką lub w ścianach bez niszczenia mienia. W większości przypadków kucie ogranicza się do jednego wskazanego punktu (np. jednej płytki).</p>
             </div>
           </div>
         </div>
 
-        <!-- Pytanie - Osuszanie -->
-        <div class="faq-item">
-          <button class="faq-trigger" onclick="toggleFaq(this)" aria-expanded="false" aria-controls="faq-ans-osuszanie">
-            <span class="faq-question">Czy po zlokalizowaniu wycieku pomagacie w osuszaniu budynku?</span>
-            <span class="faq-icon-wrapper" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="6 9 12 15 18 9"></polyline>
-              </svg>
-            </span>
-          </button>
-          <div class="faq-content" id="faq-ans-osuszanie">
-            <div class="faq-content__inner">
-              <p>Tak. Ściśle współpracujemy ze sprawdzonymi firmami zajmującymi się profesjonalnym osuszaniem po zalaniach. Pomagamy w szybkim zorganizowaniu sprzętu i rozpoczęciu procesu suszenia ścian oraz posadzek, co minimalizuje ryzyko rozwoju grzybów i pleśni.</p>
-              <p>Koszty osuszania, podobnie jak koszty lokalizacji wycieku, mogą zostać w pełni pokryte z Twojej polisy ubezpieczeniowej.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Pytanie 2 -->
+        <!-- Pytanie 2: Jak i czym suszycie -->
         <div class="faq-item">
           <button class="faq-trigger" onclick="toggleFaq(this)" aria-expanded="false" aria-controls="faq-ans-2">
-            <span class="faq-question">Czy ubezpieczyciel pokrywa koszty lokalizacji wycieku?</span>
+            <span class="faq-question">Jak i czym suszycie?</span>
             <span class="faq-icon-wrapper" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="6 9 12 15 18 9"></polyline>
@@ -212,8 +194,80 @@
           </button>
           <div class="faq-content" id="faq-ans-2">
             <div class="faq-content__inner">
-              <p>W zdecydowanej większości przypadków tak. Standardowe polisy ubezpieczeniowe mieszkań i domów (w ramach ryzyka zalania lub tzw. klauzuli „poszukiwania przyczyn awarii”) w pełni pokrywają koszty profesjonalnego wykrywania wycieków.</p>
-              <p>Po zakończeniu naszych prac na obiekcie przygotowujemy kompletną dokumentację techniczną (oficjalny protokół z opisem usterki, wskazaniem lokalizacji, metodami badawczymi oraz zdjęciami diagnostycznymi) oraz wystawiamy fakturę VAT. Dokumenty te stanowią gotową podstawę do ubiegania się o pełen zwrot kosztów od ubezpieczyciela.</p>
+              <p>Usługi osuszania wykonujemy przy użyciu najnowocześniejszego i wydajnego sprzętu renomowanych marek <strong>Corroventa</strong> oraz <strong>Aerial</strong>.</p>
+              <p>Stosujemy profesjonalne osuszacze kondensacyjne i adsorpcyjne, pompy ciśnieniowe do strefy podposadzkowej oraz wydajne wentylatory, co gwarantuje szybkie, głębokie i bezpieczne usunięcie wilgoci ze ścian, stropów i posadzek.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pytanie 3: Czas trwania osuszania -->
+        <div class="faq-item">
+          <button class="faq-trigger" onclick="toggleFaq(this)" aria-expanded="false" aria-controls="faq-ans-3">
+            <span class="faq-question">Jak długo trwa proces osuszania budynków?</span>
+            <span class="faq-icon-wrapper" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </span>
+          </button>
+          <div class="faq-content" id="faq-ans-3">
+            <div class="faq-content__inner">
+              <p>Czas trwania osuszania zależy od rodzaju i kubatury pomieszczenia, konstrukcji posadzek oraz stopnia zalania.</p>
+              <p>Standardowo proces osuszania trwa <strong>od 1 tygodnia do 2 miesięcy</strong>. Podczas trwania prac regularnie wykonujemy pomiary wilgotności masowej murów i posadzek, kontrolując postęp suszenia aż do osiągnięcia stanu całkowitej suchości.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pytanie 4: Grzyb i pleśń -->
+        <div class="faq-item">
+          <button class="faq-trigger" onclick="toggleFaq(this)" aria-expanded="false" aria-controls="faq-ans-4">
+            <span class="faq-question">Pojawił się u mnie grzyb / pleśń — czy pomożecie go usunąć?</span>
+            <span class="faq-icon-wrapper" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </span>
+          </button>
+          <div class="faq-content" id="faq-ans-4">
+            <div class="faq-content__inner">
+              <p>Tak! W naszej pracy stosujemy nowoczesne, ekologiczne i w pełni bezpieczne preparaty płynne do odgrzybiania i usuwania pleśni.</p>
+              <p>Dodatkowo stosujemy profesjonalne ozonatory o wysokiej wydajności do niszczenia szkodliwych bakterii, zarodników grzybów oraz przykrych zapachów stęchlizny powstałych po zalaniu.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pytanie 5: Hydroizolacja gruntu -->
+        <div class="faq-item">
+          <button class="faq-trigger" onclick="toggleFaq(this)" aria-expanded="false" aria-controls="faq-ans-5">
+            <span class="faq-question">Jakie technologie stosujecie przy hydroizolacji od wilgoci z gruntu?</span>
+            <span class="faq-icon-wrapper" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </span>
+          </button>
+          <div class="faq-content" id="faq-ans-5">
+            <div class="faq-content__inner">
+              <p>Stosujemy nowoczesne, certyfikowane technologie i preparaty iniekcyjne od cenionych producentów <strong>Remmers</strong> oraz <strong>Skamol</strong>.</p>
+              <p>Pozwala to na stworzenie trwałej, nieprzepuszczalnej bariery przeciwwilgociowej w ścianach i fundamentach od wewnątrz piwnicy czy garażu bez konieczności kosztownego odkopywania budynku od zewnątrz.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pytanie 6: Ubezpieczenie -->
+        <div class="faq-item">
+          <button class="faq-trigger" onclick="toggleFaq(this)" aria-expanded="false" aria-controls="faq-ans-6">
+            <span class="faq-question">Czy ubezpieczyciel pokrywa koszty lokalizacji wycieku i osuszania?</span>
+            <span class="faq-icon-wrapper" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </span>
+          </button>
+          <div class="faq-content" id="faq-ans-6">
+            <div class="faq-content__inner">
+              <p>W zdecydowanej większości przypadków tak. Standardowe polisy ubezpieczeniowe mieszkań i domów w pełni pokrywają koszty wykrywania wycieków oraz osuszania po zalaniu.</p>
+              <p>Wystawiamy pełny protokół techniczny ze zdjęciami oraz fakturę VAT do bezgotówkowego rozliczenia z ubezpieczycielem (PZU, Warta, Ergo Hestia i inne).</p>
             </div>
           </div>
         </div>
@@ -430,7 +484,7 @@
   <footer class="footer">
     <div class="container">
       <div class="footer__bottom">
-        <span>© 2026 Osuszanie & Wycieki. Wszelkie prawa zastrzeżone.</span>
+        <span>© 2026 Suszymy. Wszelkie prawa zastrzeżone.</span>
         <a href="index.html" style="color: #fff; text-decoration: underline;">Powrót do strony głównej</a>
       <p style="margin-top: 12px; font-size: 11px; opacity: 0.7;">Materiaìy na stronie są dostępne na licencji <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener" style="color: #fff; text-decoration: underline;">Creative Commons CC BY 4.0</a>.</p>
       </div>

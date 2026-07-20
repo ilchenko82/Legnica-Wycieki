@@ -150,14 +150,14 @@
   <!-- ═══ HEADER ═══ -->
   <header class="header" id="header">
     <div class="container header__inner">
-      <a href="index.html" class="header__logo" id="logo">
-        <span class="header__logo-icon" style="background: var(--color-accent); width: 36px; height: 36px; border-radius: 9px; display: inline-flex; align-items: center; justify-content: center;">
-          <svg width="20" height="24" viewBox="0 0 24 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M12 0C12 0 2 12 2 18C2 23.52 6.48 28 12 28C17.52 28 22 23.52 22 18C22 12 12 0 12 0Z" fill="white" />
+      <a href="index.html" class="header__logo" id="logo"><span class="header__logo-icon" style="background: linear-gradient(135deg, var(--color-cta) 0%, var(--color-accent) 100%); width: 40px; height: 40px; border-radius: 12px; display: inline-flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px hsla(175, 80%, 40%, 0.3);">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M12 2C12 2 5 9.5 5 14.5C5 18.37 8.13 21.5 12 21.5C15.87 21.5 19 18.37 19 14.5C19 9.5 12 2 12 2Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M8 14C8 12 11 11 12 10C13 11 16 12 16 14" stroke="white" stroke-width="2" stroke-linecap="round"/>
+            <path d="M6 18C8.5 16.5 15.5 16.5 18 18" stroke="white" stroke-width="2" stroke-linecap="round"/>
           </svg>
         </span>
-        <span class="header__logo-text">Osuszanie<span style="color: var(--color-cta);">&Wycieki</span></span>
-      </a>
+        <span class="header__logo-text">Suszymy<span style="color: var(--color-cta);">&Wycieki</span></span></a>
       <nav class="nav" id="main-nav">
         <a href="uslugi.html" class="nav__link">Usługi</a>
         <a href="cennik.html" class="nav__link active">Cennik</a>
@@ -223,28 +223,48 @@
 
       <div class="pricing__grid reveal-stagger">
 
-        <!-- Card 1: Residential -->
-        <div class="card card--pricing reveal">
-          <div class="pricing__tag">Mieszkania</div>
-          <p class="card__desc">Cena poszukiwania w mieszkaniach i kawalerkach, gdzie usługa skupia się na precyzyjnej diagnostyce kompaktowych instalacji w obrębie jednego lokalu.</p>
-          <div class="card__price">od 1 300 zł <span>brutto</span></div>
+        <!-- Card 1: Lokalizacja Wycieków -->
+        <div class="card card--pricing reveal" style="display: flex; flex-direction: column;">
+          <div class="pricing__tag" style="background: var(--color-primary-light);">Lokalizacja Wycieków</div>
+          <div style="width: 100%; height: 160px; overflow: hidden; border-radius: var(--radius-md); margin-bottom: var(--space-md);">
+            <img src="images/gallery/Wykrywanie-geofonem.jpg" alt="Lokalizacja wycieków geofonem" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <p class="card__desc">Precyzyjna, 100% bezinwazyjna diagnostyka i wykrywanie wycieków w mieszkaniach, domach oraz obiektach komercyjnych. Wykorzystujemy kamery termowizyjne, geofon oraz gaz znacznikowy H2/N2.</p>
+          <div class="card__price" style="margin-top: auto;">od 1 800 zł <span>brutto</span></div>
           <a href="index.html#contact" class="btn btn--outline" onclick="openModal(event)">Umów wizytę</a>
         </div>
 
-        <!-- Card 2: House / Commercial -->
-        <div class="card card--pricing reveal">
-          <div class="pricing__tag">Domy / komercja</div>
-          <p class="card__desc">Cena poszukiwania w domach, bliźniakach, biurach i innej komercji, gdzie specyfika dużych obiektów wymaga szczegółowego sprawdzenia wielu skomplikowanych układów wodnych, grzewczych oraz kanalizacyjnych na znacznie większym metrażu.</p>
-          <div class="card__price">od 1 500 zł <span>brutto</span></div>
-          <a href="index.html#contact" class="btn btn--outline" onclick="openModal(event)">Umów wizytę</a>
+        <!-- Card 2: Osuszanie -->
+        <div class="card card--pricing reveal" style="display: flex; flex-direction: column;">
+          <div class="pricing__tag" style="background: var(--color-cta);">Osuszanie</div>
+          <div style="width: 100%; height: 160px; overflow: hidden; border-radius: var(--radius-md); margin-bottom: var(--space-md);">
+            <img src="images/corroventa_osuszacz.png" alt="Osuszanie Corroventa" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <p class="card__desc">Profesjonalne osuszanie budynków i pomieszczeń po zalaniach, osuszanie podposadzkowe, stropy, dachy i ściany przy użyciu wydajnych osuszaczy Corroventa oraz Aerial.</p>
+          <div class="card__price" style="margin-top: auto;">od 3 500 zł <span>brutto</span></div>
+          <a href="index.html#contact" class="btn btn--outline" onclick="openModal(event)">Umów osuszanie</a>
         </div>
 
-        <!-- Card 3: Repair -->
-        <div class="card card--pricing reveal">
-          <div class="pricing__tag">Naprawa</div>
-          <p class="card__desc">W miarę możliwości technicznych oferujemy szybkie usunięcie awarii na miejscu. Decyzja o wykonaniu takiej naprawy zależy wyłącznie od stopnia skomplikowania usterki oraz dostępności specjalistycznego sprzętu i jest podejmowana na miejscu.</p>
-          <div class="card__price">od 400 zł <span>brutto</span></div>
-          <a href="index.html#contact" class="btn btn--outline" onclick="openModal(event)">Umów wizytę</a>
+        <!-- Card 3: Hydroizolacja -->
+        <div class="card card--pricing reveal" style="display: flex; flex-direction: column;">
+          <div class="pricing__tag" style="background: var(--color-accent-dark);">Hydroizolacja</div>
+          <div style="width: 100%; height: 160px; overflow: hidden; border-radius: var(--radius-md); margin-bottom: var(--space-md);">
+            <img src="images/kessloc_remmers.png" alt="Hydroizolacja Remmers" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <p class="card__desc">Zabezpieczenie ścian i fundamentów przed podsiąkaniem wód gruntowych iniekcją Remmers oraz Skamol. Trwała bariera hydroizolacyjna od wewnątrz bez kucia z zewnątrz.</p>
+          <div class="card__price" style="margin-top: auto;">od 3 000 zł <span>brutto</span></div>
+          <a href="index.html#contact" class="btn btn--outline" onclick="openModal(event)">Umów ekspertyzę</a>
+        </div>
+
+        <!-- Card 4: Naprawa -->
+        <div class="card card--pricing reveal" style="display: flex; flex-direction: column;">
+          <div class="pricing__tag" style="background: var(--color-primary-dark);">Naprawa</div>
+          <div style="width: 100%; height: 160px; overflow: hidden; border-radius: var(--radius-md); margin-bottom: var(--space-md);">
+            <img src="images/gallery/wyciek-pod-posadzka.jpg" alt="Naprawa wycieku pod posadzką" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <p class="card__desc">Szybkie usunięcie punktowej usterki i naprawa rury lub złączki od ręki po precyzyjnym zlokalizowaniu przecieku (jeśli warunki techniczne na to pozwolą).</p>
+          <div class="card__price" style="margin-top: auto;">od 400 zł <span>brutto</span></div>
+          <a href="index.html#contact" class="btn btn--outline" onclick="openModal(event)">Zamów naprawę</a>
         </div>
 
       </div>
@@ -299,7 +319,7 @@
   <footer class="footer">
     <div class="container">
       <div class="footer__bottom">
-        <span>© 2026 Osuszanie & Wycieki. Wszelkie prawa zastrzeżone.</span>
+        <span>© 2026 Suszymy. Wszelkie prawa zastrzeżone.</span>
         <a href="index.html" style="color: #fff; text-decoration: underline;">Powrót do strony głównej</a>
       <p style="margin-top: 12px; font-size: 11px; opacity: 0.7;">Materiaìy na stronie są dostępne na licencji <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener" style="color: #fff; text-decoration: underline;">Creative Commons CC BY 4.0</a>.</p>
       </div>
