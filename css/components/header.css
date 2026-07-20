@@ -175,6 +175,11 @@
   font-weight: var(--fw-semibold);
   font-size: var(--text-sm);
   transition: color var(--transition-fast);
+  white-space: nowrap;
+}
+
+.header__phone-number {
+  white-space: nowrap;
 }
 
 .header.scrolled .header__phone {

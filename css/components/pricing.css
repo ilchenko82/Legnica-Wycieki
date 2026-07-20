@@ -41,30 +41,30 @@
   font-weight: var(--fw-bold);
 }
 
-/* ── Grid: 3-column variant ─────────────────────────────────────────────── */
+/* ── Grid: 4-column variant ─────────────────────────────────────────────── */
 
 .pricing__grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-md); /* Reduced from xl for compactness */
-  align-items: stretch; /* Make boundaries identical */
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-md);
+  align-items: stretch;
 }
-
-
 
 /* ── Type tag badge ─────────────────────────────────────────────────────── */
 
 .pricing__tag {
   display: inline-block;
-  padding: 0.25rem 0.9rem;
+  padding: 0.35rem 0.9rem;
   border-radius: var(--radius-full);
   font-size: var(--text-xs);
   font-weight: var(--fw-semibold);
   text-transform: uppercase;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.05em;
   background: hsla(195, 85%, 48%, 0.1);
   color: var(--color-accent);
-  margin-bottom: var(--space-sm); /* Reduced margin for compactness */
+  margin-bottom: var(--space-sm);
+  white-space: nowrap;
+  text-align: center;
 }
 
 .pricing__tag--accent {
@@ -109,10 +109,17 @@
 
 /* ── Responsive ─────────────────────────────────────────────────────────── */
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
+  .pricing__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-md);
+  }
+}
+
+@media (max-width: 640px) {
   .pricing__grid {
     grid-template-columns: 1fr;
-    gap: var(--space-xs);
+    gap: var(--space-md);
   }
 
   .pricing__insurance {
